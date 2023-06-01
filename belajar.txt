@@ -1,3 +1,5 @@
 ini file untuk belajar
 
 "hai" - update by ludi & friends
+
+pekerjaan ludi di branch "ludi/belajar"
