@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="./weather.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap" />
+  </head>
+  <body>
+    <div class="background">
+      <img
+        class="bg-matahari"
+        alt=""
+        src="./img-weather1/matahari.svg"
+      />
+
+      <img class="bg-awan1" alt="" src="./img-weather1/awan.svg" />
+      <img class="bg-awan2" alt="" src="./img-weather1/awan.svg" />
+
+      <div class="bg-logo">
+        <div class="logo-menu-atas">
+          <img class="logo-warna" alt="" src="./img-weather1/logo-warna.svg" />
+        </div>
+        <div class="list-buttonn">
+          <div class="home-frame" id="frameContainer">
+            <div class="menu-item-text">Home</div>
+          </div>
+          <div class="weather-frame">
+            <div class="menu-item-text">Weather</div>
+          </div>
+          <div class="home-frame" id="frameContainer2">
+            <div class="menu-item-text">About Us</div>
+          </div>
+        </div>
+      </div>
+      <div class="wearher-in-container">
+        <div class="text">Check the weather in</div>
+        <div class="city">
+          <div class="enter-city">
+            <div class="text">Enter a city name</div>
+          </div>
+          <div class="search-page">
+            <img class="icon-search" alt="" src="./img-weather1/search.svg" />
+          </div>
+        </div>
+        <div class="text">or in</div>
+        <div class="your-location-container">
+          <div class="menu-item-text">Your Location</div>
+        </div>
+      </div>
+
+      <div class="main-frame-weather">
+        <div class="weather-status">
+          <div class="weather-status2">
+            <div class="day-date">
+              <div class="day">
+                {local day}, {local date} {local time}
+              </div>
+              <div class="city-name-country">{City Name}, {Country Name}</div>
+            </div>
+            <div class="status-derajat">
+              <div class="c">00°C</div>
+              <div class="city-name-country">/ 00°F</div>
+            </div>
+          </div>
+          <div class="condition-text">
+            <div class="c">{Condition: Text}</div>
+            <img class="item-kosong" alt="" src="./img-weather1/catur.png" />
+          </div>
+        </div>
+        <div class="frame-weather">
+          <div class="frame-wind">
+            <div class="wind-speed-parent">
+              <div class="wind-speed">Wind Speed</div>
+              <div class="wind-mph-mph">{wind_mph} mph / {wind_kph} kph</div>
+            </div>
+            <div class="wind-speed-parent">
+              <div class="wind-speed">Wind Direction</div>
+              <div class="wind-mph-mph">{wind_dir}</div>
+            </div>
+            <div class="wind-speed-parent">
+              <div class="wind-speed">Humidity</div>
+              <div class="wind-mph-mph">{humidity} %</div>
+            </div>
+            <div class="wind-speed-parent">
+              <div class="wind-speed">Cloud Cover</div>
+              <div class="wind-mph-mph">{cloud} %</div>
+            </div>
+            <div class="wind-speed-parent">
+              <div class="wind-speed">Visibility</div>
+              <div class="wind-mph-mph">{vis_miles} miles / {vis_km} km</div>
+            </div>
+            <div class="wind-speed-parent">
+              <div class="wind-speed">UV Index</div>
+              <div class="wind-mph-mph">{uv}</div>
+            </div>
+          </div>
+          <div class="frame-wind2">
+            <div class="wind-speed-parent">
+              <div class="c">Air Quality: {us-epa-index}</div>
+              <div class="day">(based on US - EPA standard)</div>
+            </div>
+            <div class="wind-speed-parent">
+              <div class="wind-speed">CO</div>
+              <div class="wind-mph-mph">{co} μg/m3</div>
+            </div>
+            <div class="wind-speed-parent">
+              <div class="wind-speed">NO2</div>
+              <div class="wind-mph-mph">{no2} μg/m3</div>
+            </div>
+            <div class="wind-speed-parent">
+              <div class="wind-speed">O3</div>
+              <div class="wind-mph-mph">{o3} μg/m3</div>
+            </div>
+            <div class="wind-speed-parent">
+              <div class="wind-speed">SO2</div>
+              <div class="wind-mph-mph">{so2} μg/m3</div>
+            </div>
+            <div class="wind-speed-parent">
+              <div class="wind-speed">Particle Pollution</div>
+              <div class="wind-mph-mph">{pm10} μg/m3</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame-marine">
+        <div class="frame-parent39">
+          <div class="descrip-text">
+            <div class="c">Marine Weather</div>
+            <div class="temperature">
+              <div class="group-temperature">
+                <div class="c">00°C</div>
+                <div class="city-name-country">/ 00°F</div>
+              </div>
+              <div class="condition">{Condition: Text}</div>
+            </div>
+          </div>
+          <div class="frame-wind">
+            <div class="wind-speed-parent">
+              <div class="wind-speed">Max Wind Speed</div>
+              <div class="wind-mph-mph">
+                {maxwind_mph} mph / {maxwind_kph} kph
+              </div>
+            </div>
+            <div class="wind-speed-parent">
+              <div class="wind-speed">Average Humidity</div>
+              <div class="wind-mph-mph">{avghumidity} %</div>
+            </div>
+            <div class="wind-speed-parent">
+              <div class="wind-speed">Average Visibility</div>
+              <div class="wind-mph-mph">
+                {avgvis_miles} miles / {avgvis_km} km
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="group-div">
+          <div class="take-a-look-at-the-parent">
+            <div class="day">Take a look at the</div>
+            <div class="days-forecast">3 Days Forecast</div>
+          </div>
+          <img class="vector-icon3" alt="" src="./img-weather1/bg-button.svg" />
+        </div>
+      </div>
+      <div class="day-city">
+        <div class="c">3 Days Forecast in {City Name}</div>
+        <div class="day-date2">
+          <div class="day-date-local">
+            <div class="day">{local day}, {local date}</div>
+            <div class="frame-temperature">
+              <div class="group-temperature">
+                <div class="c">00°C</div>
+                <div class="city-name-country">/ 00°F</div>
+              </div>
+              <div class="condition-text2">{Condition: Text}</div>
+            </div>
+            <div class="descrip-text">
+              <div class="wind-speed-parent">
+                <div class="time">6 AM</div>
+                <div class="wind-mph-mph">00°C / 00°F</div>
+                <div class="wind-mph-mph">{condition: text}</div>
+              </div>
+              <div class="wind-speed-parent">
+                <div class="time">9 AM</div>
+                <div class="wind-mph-mph">00°C / 00°F</div>
+                <div class="wind-mph-mph">{condition: text}</div>
+              </div>
+              <div class="wind-speed-parent">
+                <div class="time">12 PM</div>
+                <div class="wind-mph-mph">00°C / 00°F</div>
+                <div class="wind-mph-mph">{condition: text}</div>
+              </div>
+              <div class="wind-speed-parent">
+                <div class="time">3 PM</div>
+                <div class="wind-mph-mph">00°C / 00°F</div>
+                <div class="wind-mph-mph">{condition: text}</div>
+              </div>
+              <div class="wind-speed-parent">
+                <div class="time">6 PM</div>
+                <div class="wind-mph-mph">00°C / 00°F</div>
+                <div class="wind-mph-mph">{condition: text}</div>
+              </div>
+              <div class="wind-speed-parent">
+                <div class="time">9 PM</div>
+                <div class="wind-mph-mph">00°C / 00°F</div>
+                <div class="wind-mph-mph">{condition: text}</div>
+              </div>
+            </div>
+          </div>
+          <div class="day-date-local">
+            <div class="day">{local day}, {local date}</div>
+            <div class="frame-temperature">
+              <div class="group-temperature">
+                <div class="c">00°C</div>
+                <div class="city-name-country">/ 00°F</div>
+              </div>
+              <div class="condition-text2">{Condition: Text}</div>
+            </div>
+            <div class="descrip-text">
+              <div class="wind-speed-parent">
+                <div class="time">6 AM</div>
+                <div class="wind-mph-mph">00°C / 00°F</div>
+                <div class="wind-mph-mph">{condition: text}</div>
+              </div>
+              <div class="wind-speed-parent">
+                <div class="time">9 AM</div>
+                <div class="wind-mph-mph">00°C / 00°F</div>
+                <div class="wind-mph-mph">{condition: text}</div>
+              </div>
+              <div class="wind-speed-parent">
+                <div class="time">12 PM</div>
+                <div class="wind-mph-mph">00°C / 00°F</div>
+                <div class="wind-mph-mph">{condition: text}</div>
+              </div>
+              <div class="wind-speed-parent">
+                <div class="time">3 PM</div>
+                <div class="wind-mph-mph">00°C / 00°F</div>
+                <div class="wind-mph-mph">{condition: text}</div>
+              </div>
+              <div class="wind-speed-parent">
+                <div class="time">6 PM</div>
+                <div class="wind-mph-mph">00°C / 00°F</div>
+                <div class="wind-mph-mph">{condition: text}</div>
+              </div>
+              <div class="wind-speed-parent">
+                <div class="time">9 PM</div>
+                <div class="wind-mph-mph">00°C / 00°F</div>
+                <div class="wind-mph-mph">{condition: text}</div>
+              </div>
+            </div>
+          </div>
+          <div class="day-date-local">
+            <div class="day">{local day}, {local date}</div>
+            <div class="frame-temperature">
+              <div class="group-temperature">
+                <div class="temperature-celcius">00°C</div>
+                <div class="city-name-country">/ 00°F</div>
+              </div>
+              <div class="condition-text2">{Condition: Text}</div>
+            </div>
+            <div class="descrip-text">
+              <div class="wind-speed-parent">
+                <div class="time">6 AM</div>
+                <div class="wind-mph-mph">00°C / 00°F</div>
+                <div class="wind-mph-mph">{condition: text}</div>
+              </div>
+              <div class="wind-speed-parent">
+                <div class="time">9 AM</div>
+                <div class="wind-mph-mph">00°C / 00°F</div>
+                <div class="wind-mph-mph">{condition: text}</div>
+              </div>
+              <div class="wind-speed-parent">
+                <div class="time">12 PM</div>
+                <div class="wind-mph-mph">00°C / 00°F</div>
+                <div class="wind-mph-mph">{condition: text}</div>
+              </div>
+              <div class="wind-speed-parent">
+                <div class="time">3 PM</div>
+                <div class="wind-mph-mph">00°C / 00°F</div>
+                <div class="wind-mph-mph">{condition: text}</div>
+              </div>
+              <div class="wind-speed-parent">
+                <div class="time">6 PM</div>
+                <div class="wind-mph-mph">00°C / 00°F</div>
+                <div class="wind-mph-mph">{condition: text}</div>
+              </div>
+              <div class="wind-speed-parent">
+                <div class="time">9 PM</div>
+                <div class="wind-mph-mph">00°C / 00°F</div>
+                <div class="wind-mph-mph">{condition: text}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="see-3-day">
+        <div class="temperature-celcius">Alerts in 3 Days</div>
+        <div class="frame-event">
+          <div class="frame-event2">
+            <div class="event-parent">
+              <div class="event">{event}!</div>
+              <div class="areas">{areas}.</div>
+            </div>
+            <div class="issued-effective">
+              <div class="areas">Issued {effective in format dd-MMMM-yyyy}</div>
+              <div class="areas">until {expires in format dd-MMMM-yyyy}.</div>
+            </div>
+          </div>
+          <div class="frame-event2">
+            <div class="event-parent">
+              <div class="event">{event}!</div>
+              <div class="areas">{areas}.</div>
+            </div>
+            <div class="issued-effective">
+              <div class="areas">Issued {effective in format dd-MMMM-yyyy}</div>
+              <div class="areas">until {expires in format dd-MMMM-yyyy}.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="menu-future">
+        <div class="group-future">
+          <div class="menu-item-text">Wanna see the Future?</div>
+          <div class="weather-check">
+            Check the weather between 14 days and 300 days from today in the
+            future!
+          </div>
+        </div>
+        <div class="frame-check-weather">
+          <div class="text">Check the weather in</div>
+          <div class="enter-city">
+            <div class="text">Enter a city name</div>
+          </div>
+          <div class="text">on</div>
+          <div class="city">
+            <div class="enter-city">
+              <div class="text">Enter future date</div>
+            </div>
+            <div class="search-page">
+              <img class="icon-search" alt="" src="./img-weather1/icon-search2.svg" />
+            </div>
+          </div>
+        </div>
+        <div class="frame-weather2">
+          <div class="weather-status">
+            <div class="weather-status2">
+              <div class="day-date">
+                <div class="day">
+                  {local day}, {local date} {local time}
+                </div>
+                <div class="city-name-country">{City Name}, {Country Name}</div>
+              </div>
+              <div class="status-derajat">
+                <div class="temperature-celcius">00°C</div>
+                <div class="city-name-country">/ 00°F</div>
+              </div>
+            </div>
+            <div class="condition-text">
+              <div class="temperature-celcius">{Condition: Text}</div>
+              <img
+                class="item-kosong"
+                alt=""
+                src="./img-weather1/catur.png"
+              />
+            </div>
+          </div>
+          <div class="frame-weather">
+            <div class="frame-wind">
+              <div class="wind-speed-parent">
+                <div class="wind-speed">Wind Speed</div>
+                <div class="wind-mph-mph">{wind_mph} mph / {wind_kph} kph</div>
+              </div>
+              <div class="wind-speed-parent">
+                <div class="wind-speed">Wind Direction</div>
+                <div class="wind-mph-mph">{wind_dir}</div>
+              </div>
+              <div class="wind-speed-parent">
+                <div class="wind-speed">Humidity</div>
+                <div class="wind-mph-mph">{humidity} %</div>
+              </div>
+              <div class="wind-speed-parent">
+                <div class="wind-speed">Cloud Cover</div>
+                <div class="wind-mph-mph">{cloud} %</div>
+              </div>
+              <div class="wind-speed-parent">
+                <div class="wind-speed">Visibility</div>
+                <div class="wind-mph-mph">{vis_miles} miles / {vis_km} km</div>
+              </div>
+              <div class="wind-speed-parent">
+                <div class="wind-speed">UV Index</div>
+                <div class="wind-mph-mph">{uv}</div>
+              </div>
+            </div>
+            <div class="frame-wind2">
+              <div class="wind-speed-parent">
+                <div class="temperature-celcius">Air Quality: {us-epa-index}</div>
+                <div class="day">(based on US - EPA standard)</div>
+              </div>
+              <div class="wind-speed-parent">
+                <div class="wind-speed">CO</div>
+                <div class="wind-mph-mph">{co} μg/m3</div>
+              </div>
+              <div class="wind-speed-parent">
+                <div class="wind-speed">NO2</div>
+                <div class="wind-mph-mph">{no2} μg/m3</div>
+              </div>
+              <div class="wind-speed-parent">
+                <div class="wind-speed">O3</div>
+                <div class="wind-mph-mph">{o3} μg/m3</div>
+              </div>
+              <div class="wind-speed-parent">
+                <div class="wind-speed">SO2</div>
+                <div class="wind-mph-mph">{so2} μg/m3</div>
+              </div>
+              <div class="wind-speed-parent">
+                <div class="wind-speed">Particle Pollution</div>
+                <div class="wind-mph-mph">{pm10} μg/m3</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!--Footer-->
+            <div class="copyright-2023-by-skyforecast-container">
+              <div class="copyright-2023-by2">
+                Copyright 2023 by SkyForecast for RevoU Kampus Merdeka Program.
+              </div>
+              <div class="copyright-2023-by2">|</div>
+              <div class="copyright-2023-by2">
+                <span>Powered by </span>
+                <a
+                  class="weather-api4"
+                  href="https://www.weatherapi.com/"
+                  target="_blank"
+                >
+                  <span class="weather-api5">Weather API</span>
+                </a>
+                <span> and </span>
+                <a
+                  class="weather-api4"
+                  href="http://www.geonames.org/"
+                  target="_blank"
+                >
+                  <span class="weather-api5">GeoNames</span>
+                </a>
+                <span>.</span>
+              </div>
+              <div class="logo-frame">
+                <div class="logo-bawah">
+                  <img class="logo-footer" alt="" src="./img-weather1/logo-footerr.svg" />
+                </div>
+              </div>
+            </div>
+    </div>
+
+    <script>
+      var frameContainer = document.getElementById("frameContainer");
+      if (frameContainer) {
+        frameContainer.addEventListener("click", function (e) {
+          window.location.href = "/";
+        });
+      }
+      
+      var frameContainer2 = document.getElementById("frameContainer2");
+      if (frameContainer2) {
+        frameContainer2.addEventListener("click", function (e) {
+          window.location.href = "./about-us.html";
+        });
+      }
+      </script>
+  </body>
+</html>
