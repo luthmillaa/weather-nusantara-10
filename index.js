@@ -5,13 +5,18 @@ function fetchWeatherData() {
       .then(response => response.json())
       .then(data => {
         const locations = data?.geonames;
+        console.log(locations);
         if (locations && locations.length > 0) {
-          const randomLocations = locations[Math.floor(Math.random()*locations.length)];
-          console.log(randomLocations);
-          randomLocations.forEach((location, index) => {
+          for (let i = 0; i < 3; i++) {
+            const randomLocation = locations[Math.floor(Math.random()*locations.length)]; // get 1 random location
+            console.log(randomLocation);
             const { lat, lng } = location;
-            fetchWeatherForecast(lat, lng, index + 1);
-          });
+            fetchWeatherForecast(lat, lng, i+1);
+          }
+          // randomLocation.forEach((location, index) => {
+          //   const { lat, lng } = location;
+          //   fetchWeatherForecast(lat, lng, index + 1);
+          // });
         }
       })
       .catch(error => {
