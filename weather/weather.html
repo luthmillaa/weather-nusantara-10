@@ -351,49 +351,47 @@
         <div class="weather-status">
           <div class="weather-status2">
             <div class="day-date">
-              <div class="day">
-                {local day}, {local date} {local time}
-              </div>
-              <div class="city-name-country">{City Name}, {Country Name}</div>
+              <div class="day" id="ftr-day">...</div>
+              <div class="city-name-country" id="ftr-city-country">...</div>
             </div>
             <div class="status-derajat">
-              <div class="temperature-celcius">00°C</div>
-              <div class="city-name-country">/ 00°F</div>
+              <div class="temperature-celcius" id="ftr-c">...°C</div>
+              <div class="city-name-country" id="ftr-f">/ ...°F</div>
             </div>
           </div>
           <div class="condition-text">
-            <div class="temperature-celcius">{Condition: Text}</div>
-            <img class="item-kosong" alt="" src="./img-weather1/catur.png" />
+            <div class="temperature-celcius" id="ftr-cond">...</div>
+            <img class="item-kosong" alt="" src="" id="ftr-cond-img" />
           </div>
         </div>
         <div class="frame-weather">
           <div class="frame-wind">
             <div class="label-parent">
               <div class="label">Wind Speed</div>
-              <div class="value">{wind_mph} mph / {wind_kph} kph</div>
+              <div class="value" id="ftr-wind-speed">...</div>
             </div>
-            <div class="label-parent">
+            <!-- <div class="label-parent">
               <div class="label">Wind Direction</div>
-              <div class="value">{wind_dir}</div>
-            </div>
+              <div class="value" id="ftr-wind-dir">...</div>
+            </div> -->
             <div class="label-parent">
               <div class="label">Humidity</div>
-              <div class="value">{humidity} %</div>
+              <div class="value" id="ftr-humid">...</div>
             </div>
-            <div class="label-parent">
+            <!-- <div class="label-parent">
               <div class="label">Cloud Cover</div>
               <div class="value">{cloud} %</div>
-            </div>
+            </div> -->
             <div class="label-parent">
               <div class="label">Visibility</div>
-              <div class="value">{vis_miles} miles / {vis_km} km</div>
+              <div class="value" id="ftr-vis">...</div>
             </div>
             <div class="label-parent">
               <div class="label">UV Index</div>
-              <div class="value">{uv}</div>
+              <div class="value" id="ftr-uv">...</div>
             </div>
           </div>
-          <div class="frame-wind2">
+          <!-- <div class="frame-wind2">
             <div class="label-parent">
               <div class="temperature-celcius">Air Quality: {us-epa-index}</div>
               <div class="day">(based on US - EPA standard)</div>
@@ -418,7 +416,7 @@
               <div class="label">Particle Pollution</div>
               <div class="value">{pm10} μg/m3</div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

@@ -702,6 +702,7 @@ body {
   padding: 20px 24px;
   align-items: flex-start;
   font-size: 14px;
+  width: 600px;
 }
 
 .menu-future {

@@ -23,12 +23,6 @@ function getParams() {
     marineWeather(locationParam);
     forecastWeather(locationParam);
     futureWeather(locationParam, futureParam); // date must be in yyyy-MM-dd format
-
-    // TODO - move this after fetching future weather
-    $('#forecast-empty').hide();
-    $('#future-empty').hide();
-    $('#frame-column').css('display', 'flex');
-    $('#frame-weather2').css('display', 'flex');
   }
 }
 
@@ -162,7 +156,6 @@ function forecastWeather(location) {
       if (data) {
         const forecastDays = data.forecast.forecastday; // 3 days forecast data
         forecastDays.splice(0, 1);
-        console.log(forecastDays);
         const container = document.querySelector('.day-date2');
         const dayContainers = container.querySelectorAll('.day-date-local'); // 3 days forecast container
 
@@ -220,7 +213,46 @@ function futureWeather(location, date) {
   console.log(`future weather: ${location} in ${date}`);
   const apiKey = '61082700d6284853a6e92559231506'; // Ganti dengan kunci API cuaca yang valid
   const urlFuture = `http://api.weatherapi.com/v1/future.json?key=${apiKey}&q=${location}&dt=${date}`;
+
   // TODO
+  fetch(urlFuture)
+    .then(response => response.json())
+    .then(data => {
+      if (data) {
+        const container = document.querySelector('#frame-weather2');
+        const elCityCountry = container.querySelector('#ftr-city-country');
+        elCityCountry.textContent = `${data.location.name}, ${data.location.country}`
+
+        const ftrData = data.forecast.forecastday[0];
+        const elDay = container.querySelector('#ftr-day');
+        elDay.textContent = `${getDayName(ftrData.date)}, ${ftrData.date}`;
+
+        const ftrDayData = ftrData.day;
+        const elTempC = container.querySelector('#ftr-c');
+        elTempC.textContent = `${ftrDayData.avgtemp_c}°C`;
+        const elTempF = container.querySelector('#ftr-f');
+        elTempF.textContent = `/ ${ftrDayData.avgtemp_f}°F`;
+        const elCond = container.querySelector('#ftr-cond');
+        elCond.textContent = `${ftrDayData.condition.text}`;
+        const elCondImg = container.querySelector('#ftr-cond-img');
+        elCondImg.src = `${ftrDayData.condition.icon}`;
+        const elWindSpeed = container.querySelector('#ftr-wind-speed');
+        elWindSpeed.textContent = `${ftrDayData.maxwind_mph} mph / ${ftrDayData.maxwind_kph} kph`;
+        const elHumidity = container.querySelector('#ftr-humid');
+        elHumidity.textContent = `${ftrDayData.avghumidity} %`;
+        const elVis = container.querySelector('#ftr-vis');
+        elVis.textContent = `${ftrDayData.avgvis_miles} miles / ${ftrDayData.avgvis_km} km`;
+        const elUv = container.querySelector('#ftr-uv');
+        elUv.textContent = `${ftrDayData.uv}`;
+      }
+    })
+    .then(() => {
+      $('#future-empty').hide();
+      $('#frame-weather2').css('display', 'flex');
+    })
+    .catch(error => {
+      console.log('Error fetching forecast weather:', error);
+    })
 }
 
 getParams();
