@@ -57,72 +57,70 @@
             <div class="weather-status">
               <div class="weather-status2">
                 <div class="day-date">
-                  <div class="day">
-                    {local day}, {local date} {local time}
-                  </div>
-                  <div class="city-name-country">{City Name}, {Country Name}</div>
+                  <div class="day">...</div>
+                  <div class="city-name-country">...</div>
                 </div>
                 <div class="status-derajat">
-                  <div class="c">00°C</div>
-                  <div class="city-name-country">/ 00°F</div>
+                  <div class="c">...°C</div>
+                  <div class="f">/ ...°F</div>
                 </div>
               </div>
               <div class="condition-text">
-                <div class="c">{Condition: Text}</div>
-                <img class="item-kosong" alt="" src="./img-weather1/catur.png" />
+                <div class="condition">...</div>
+                <img class="item-kosong" id="condition-img" alt="" src="" />
               </div>
             </div>
             <div class="frame-weather">
               <div class="frame-wind">
-                <div class="wind-speed-parent">
-                  <div class="wind-speed">Wind Speed</div>
-                  <div class="wind-mph-mph">{wind_mph} mph / {wind_kph} kph</div>
+                <div class="label-parent">
+                  <div class="label">Wind Speed</div>
+                  <div class="value" id="wind-speed">...</div>
                 </div>
-                <div class="wind-speed-parent">
-                  <div class="wind-speed">Wind Direction</div>
-                  <div class="wind-mph-mph">{wind_dir}</div>
+                <div class="label-parent">
+                  <div class="label">Wind Direction</div>
+                  <div class="value" id="wind-dir">...</div>
                 </div>
-                <div class="wind-speed-parent">
-                  <div class="wind-speed">Humidity</div>
-                  <div class="wind-mph-mph">{humidity} %</div>
+                <div class="label-parent">
+                  <div class="label">Humidity</div>
+                  <div class="value" id="humidity">...</div>
                 </div>
-                <div class="wind-speed-parent">
-                  <div class="wind-speed">Cloud Cover</div>
-                  <div class="wind-mph-mph">{cloud} %</div>
+                <div class="label-parent">
+                  <div class="label">Cloud Cover</div>
+                  <div class="value" id="cloud">...</div>
                 </div>
-                <div class="wind-speed-parent">
-                  <div class="wind-speed">Visibility</div>
-                  <div class="wind-mph-mph">{vis_miles} miles / {vis_km} km</div>
+                <div class="label-parent">
+                  <div class="label">Visibility</div>
+                  <div class="value" id="vis">...</div>
                 </div>
-                <div class="wind-speed-parent">
-                  <div class="wind-speed">UV Index</div>
-                  <div class="wind-mph-mph">{uv}</div>
+                <div class="label-parent">
+                  <div class="label">UV Index</div>
+                  <div class="value" id="uv">...</div>
                 </div>
               </div>
               <div class="frame-wind2">
-                <div class="wind-speed-parent">
-                  <div class="c">Air Quality: {us-epa-index}</div>
-                  <div class="day">(based on US - EPA standard)</div>
+                <div class="label-parent">
+                  <div class="c" id="us-epa-index">...</div>
+                  <div class="day"> (based on US - EPA standard)</div>
                 </div>
-                <div class="wind-speed-parent">
-                  <div class="wind-speed">CO</div>
-                  <div class="wind-mph-mph">{co} μg/m3</div>
+                <div class="label-parent">
+                  <div class="label">CO</div>
+                  <div class="value" id="co">...</div>
                 </div>
-                <div class="wind-speed-parent">
-                  <div class="wind-speed">NO2</div>
-                  <div class="wind-mph-mph">{no2} μg/m3</div>
+                <div class="label-parent">
+                  <div class="label">NO2</div>
+                  <div class="value" id="no2">...</div>
                 </div>
-                <div class="wind-speed-parent">
-                  <div class="wind-speed">O3</div>
-                  <div class="wind-mph-mph">{o3} μg/m3</div>
+                <div class="label-parent">
+                  <div class="label">O3</div>
+                  <div class="value" id="o3">...</div>
                 </div>
-                <div class="wind-speed-parent">
-                  <div class="wind-speed">SO2</div>
-                  <div class="wind-mph-mph">{so2} μg/m3</div>
+                <div class="label-parent">
+                  <div class="label">SO2</div>
+                  <div class="value" id="so2">...</div>
                 </div>
-                <div class="wind-speed-parent">
-                  <div class="wind-speed">Particle Pollution</div>
-                  <div class="wind-mph-mph">{pm10} μg/m3</div>
+                <div class="label-parent">
+                  <div class="label">Particle Pollution</div>
+                  <div class="value" id="pm10">...</div>
                 </div>
               </div>
             </div>
@@ -140,19 +138,19 @@
                 </div>
               </div>
               <div class="frame-wind">
-                <div class="wind-speed-parent">
-                  <div class="wind-speed">Max Wind Speed</div>
-                  <div class="wind-mph-mph">
+                <div class="label-parent">
+                  <div class="label">Max Wind Speed</div>
+                  <div class="value">
                     {maxwind_mph} mph / {maxwind_kph} kph
                   </div>
                 </div>
-                <div class="wind-speed-parent">
-                  <div class="wind-speed">Average Humidity</div>
-                  <div class="wind-mph-mph">{avghumidity} %</div>
+                <div class="label-parent">
+                  <div class="label">Average Humidity</div>
+                  <div class="value">{avghumidity} %</div>
                 </div>
-                <div class="wind-speed-parent">
-                  <div class="wind-speed">Average Visibility</div>
-                  <div class="wind-mph-mph">
+                <div class="label-parent">
+                  <div class="label">Average Visibility</div>
+                  <div class="value">
                     {avgvis_miles} miles / {avgvis_km} km
                   </div>
                 </div>
@@ -180,35 +178,35 @@
                 <div class="condition-text2">{Condition: Text}</div>
               </div>
               <div class="descrip-text">
-                <div class="wind-speed-parent">
+                <div class="label-parent">
                   <div class="time">6 AM</div>
-                  <div class="wind-mph-mph">00°C / 00°F</div>
-                  <div class="wind-mph-mph">{condition: text}</div>
+                  <div class="value">00°C / 00°F</div>
+                  <div class="value">{condition: text}</div>
                 </div>
-                <div class="wind-speed-parent">
+                <div class="label-parent">
                   <div class="time">9 AM</div>
-                  <div class="wind-mph-mph">00°C / 00°F</div>
-                  <div class="wind-mph-mph">{condition: text}</div>
+                  <div class="value">00°C / 00°F</div>
+                  <div class="value">{condition: text}</div>
                 </div>
-                <div class="wind-speed-parent">
+                <div class="label-parent">
                   <div class="time">12 PM</div>
-                  <div class="wind-mph-mph">00°C / 00°F</div>
-                  <div class="wind-mph-mph">{condition: text}</div>
+                  <div class="value">00°C / 00°F</div>
+                  <div class="value">{condition: text}</div>
                 </div>
-                <div class="wind-speed-parent">
+                <div class="label-parent">
                   <div class="time">3 PM</div>
-                  <div class="wind-mph-mph">00°C / 00°F</div>
-                  <div class="wind-mph-mph">{condition: text}</div>
+                  <div class="value">00°C / 00°F</div>
+                  <div class="value">{condition: text}</div>
                 </div>
-                <div class="wind-speed-parent">
+                <div class="label-parent">
                   <div class="time">6 PM</div>
-                  <div class="wind-mph-mph">00°C / 00°F</div>
-                  <div class="wind-mph-mph">{condition: text}</div>
+                  <div class="value">00°C / 00°F</div>
+                  <div class="value">{condition: text}</div>
                 </div>
-                <div class="wind-speed-parent">
+                <div class="label-parent">
                   <div class="time">9 PM</div>
-                  <div class="wind-mph-mph">00°C / 00°F</div>
-                  <div class="wind-mph-mph">{condition: text}</div>
+                  <div class="value">00°C / 00°F</div>
+                  <div class="value">{condition: text}</div>
                 </div>
               </div>
             </div>
@@ -222,35 +220,35 @@
                 <div class="condition-text2">{Condition: Text}</div>
               </div>
               <div class="descrip-text">
-                <div class="wind-speed-parent">
+                <div class="label-parent">
                   <div class="time">6 AM</div>
-                  <div class="wind-mph-mph">00°C / 00°F</div>
-                  <div class="wind-mph-mph">{condition: text}</div>
+                  <div class="value">00°C / 00°F</div>
+                  <div class="value">{condition: text}</div>
                 </div>
-                <div class="wind-speed-parent">
+                <div class="label-parent">
                   <div class="time">9 AM</div>
-                  <div class="wind-mph-mph">00°C / 00°F</div>
-                  <div class="wind-mph-mph">{condition: text}</div>
+                  <div class="value">00°C / 00°F</div>
+                  <div class="value">{condition: text}</div>
                 </div>
-                <div class="wind-speed-parent">
+                <div class="label-parent">
                   <div class="time">12 PM</div>
-                  <div class="wind-mph-mph">00°C / 00°F</div>
-                  <div class="wind-mph-mph">{condition: text}</div>
+                  <div class="value">00°C / 00°F</div>
+                  <div class="value">{condition: text}</div>
                 </div>
-                <div class="wind-speed-parent">
+                <div class="label-parent">
                   <div class="time">3 PM</div>
-                  <div class="wind-mph-mph">00°C / 00°F</div>
-                  <div class="wind-mph-mph">{condition: text}</div>
+                  <div class="value">00°C / 00°F</div>
+                  <div class="value">{condition: text}</div>
                 </div>
-                <div class="wind-speed-parent">
+                <div class="label-parent">
                   <div class="time">6 PM</div>
-                  <div class="wind-mph-mph">00°C / 00°F</div>
-                  <div class="wind-mph-mph">{condition: text}</div>
+                  <div class="value">00°C / 00°F</div>
+                  <div class="value">{condition: text}</div>
                 </div>
-                <div class="wind-speed-parent">
+                <div class="label-parent">
                   <div class="time">9 PM</div>
-                  <div class="wind-mph-mph">00°C / 00°F</div>
-                  <div class="wind-mph-mph">{condition: text}</div>
+                  <div class="value">00°C / 00°F</div>
+                  <div class="value">{condition: text}</div>
                 </div>
               </div>
             </div>
@@ -264,35 +262,35 @@
                 <div class="condition-text2">{Condition: Text}</div>
               </div>
               <div class="descrip-text">
-                <div class="wind-speed-parent">
+                <div class="label-parent">
                   <div class="time">6 AM</div>
-                  <div class="wind-mph-mph">00°C / 00°F</div>
-                  <div class="wind-mph-mph">{condition: text}</div>
+                  <div class="value">00°C / 00°F</div>
+                  <div class="value">{condition: text}</div>
                 </div>
-                <div class="wind-speed-parent">
+                <div class="label-parent">
                   <div class="time">9 AM</div>
-                  <div class="wind-mph-mph">00°C / 00°F</div>
-                  <div class="wind-mph-mph">{condition: text}</div>
+                  <div class="value">00°C / 00°F</div>
+                  <div class="value">{condition: text}</div>
                 </div>
-                <div class="wind-speed-parent">
+                <div class="label-parent">
                   <div class="time">12 PM</div>
-                  <div class="wind-mph-mph">00°C / 00°F</div>
-                  <div class="wind-mph-mph">{condition: text}</div>
+                  <div class="value">00°C / 00°F</div>
+                  <div class="value">{condition: text}</div>
                 </div>
-                <div class="wind-speed-parent">
+                <div class="label-parent">
                   <div class="time">3 PM</div>
-                  <div class="wind-mph-mph">00°C / 00°F</div>
-                  <div class="wind-mph-mph">{condition: text}</div>
+                  <div class="value">00°C / 00°F</div>
+                  <div class="value">{condition: text}</div>
                 </div>
-                <div class="wind-speed-parent">
+                <div class="label-parent">
                   <div class="time">6 PM</div>
-                  <div class="wind-mph-mph">00°C / 00°F</div>
-                  <div class="wind-mph-mph">{condition: text}</div>
+                  <div class="value">00°C / 00°F</div>
+                  <div class="value">{condition: text}</div>
                 </div>
-                <div class="wind-speed-parent">
+                <div class="label-parent">
                   <div class="time">9 PM</div>
-                  <div class="wind-mph-mph">00°C / 00°F</div>
-                  <div class="wind-mph-mph">{condition: text}</div>
+                  <div class="value">00°C / 00°F</div>
+                  <div class="value">{condition: text}</div>
                 </div>
               </div>
             </div>
@@ -374,55 +372,55 @@
         </div>
         <div class="frame-weather">
           <div class="frame-wind">
-            <div class="wind-speed-parent">
-              <div class="wind-speed">Wind Speed</div>
-              <div class="wind-mph-mph">{wind_mph} mph / {wind_kph} kph</div>
+            <div class="label-parent">
+              <div class="label">Wind Speed</div>
+              <div class="value">{wind_mph} mph / {wind_kph} kph</div>
             </div>
-            <div class="wind-speed-parent">
-              <div class="wind-speed">Wind Direction</div>
-              <div class="wind-mph-mph">{wind_dir}</div>
+            <div class="label-parent">
+              <div class="label">Wind Direction</div>
+              <div class="value">{wind_dir}</div>
             </div>
-            <div class="wind-speed-parent">
-              <div class="wind-speed">Humidity</div>
-              <div class="wind-mph-mph">{humidity} %</div>
+            <div class="label-parent">
+              <div class="label">Humidity</div>
+              <div class="value">{humidity} %</div>
             </div>
-            <div class="wind-speed-parent">
-              <div class="wind-speed">Cloud Cover</div>
-              <div class="wind-mph-mph">{cloud} %</div>
+            <div class="label-parent">
+              <div class="label">Cloud Cover</div>
+              <div class="value">{cloud} %</div>
             </div>
-            <div class="wind-speed-parent">
-              <div class="wind-speed">Visibility</div>
-              <div class="wind-mph-mph">{vis_miles} miles / {vis_km} km</div>
+            <div class="label-parent">
+              <div class="label">Visibility</div>
+              <div class="value">{vis_miles} miles / {vis_km} km</div>
             </div>
-            <div class="wind-speed-parent">
-              <div class="wind-speed">UV Index</div>
-              <div class="wind-mph-mph">{uv}</div>
+            <div class="label-parent">
+              <div class="label">UV Index</div>
+              <div class="value">{uv}</div>
             </div>
           </div>
           <div class="frame-wind2">
-            <div class="wind-speed-parent">
+            <div class="label-parent">
               <div class="temperature-celcius">Air Quality: {us-epa-index}</div>
               <div class="day">(based on US - EPA standard)</div>
             </div>
-            <div class="wind-speed-parent">
-              <div class="wind-speed">CO</div>
-              <div class="wind-mph-mph">{co} μg/m3</div>
+            <div class="label-parent">
+              <div class="label">CO</div>
+              <div class="value">{co} μg/m3</div>
             </div>
-            <div class="wind-speed-parent">
-              <div class="wind-speed">NO2</div>
-              <div class="wind-mph-mph">{no2} μg/m3</div>
+            <div class="label-parent">
+              <div class="label">NO2</div>
+              <div class="value">{no2} μg/m3</div>
             </div>
-            <div class="wind-speed-parent">
-              <div class="wind-speed">O3</div>
-              <div class="wind-mph-mph">{o3} μg/m3</div>
+            <div class="label-parent">
+              <div class="label">O3</div>
+              <div class="value">{o3} μg/m3</div>
             </div>
-            <div class="wind-speed-parent">
-              <div class="wind-speed">SO2</div>
-              <div class="wind-mph-mph">{so2} μg/m3</div>
+            <div class="label-parent">
+              <div class="label">SO2</div>
+              <div class="value">{so2} μg/m3</div>
             </div>
-            <div class="wind-speed-parent">
-              <div class="wind-speed">Particle Pollution</div>
-              <div class="wind-mph-mph">{pm10} μg/m3</div>
+            <div class="label-parent">
+              <div class="label">Particle Pollution</div>
+              <div class="value">{pm10} μg/m3</div>
             </div>
           </div>
         </div>
