@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+  <link rel="stylesheet" href="./css/home.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap" />
+
+  <script>
+    var button6ContentA = document.getElementById("button6ContentA");
+    if (button6ContentA) {
+      button6ContentA.addEventListener("click", function () {
+        window.open(
+          "https://www.independent.co.uk/climate-change/news/climate-change-risk-cities-india-china-us-b2285548.html"
+        );
+      });
+    }
+    var button7ContentB = document.getElementById("button7ContentB");
+    if (button7ContentB) {
+      button7ContentB.addEventListener("click", function () {
+        window.open(
+          "https://hakaimagazine.com/news/by-fighting-the-ozone-hole-we-accidentally-saved-ourselves/"
+        );
+      });
+    }
+    var button8ContentC = document.getElementById("button8ContentC");
+    if (button8ContentC) {
+      button8ContentC.addEventListener("click", function () {
+        window.open(
+          "https://www.wired.com/story/seagrass-humble-ocean-plant-worth-trillions/"
+        );
+      });
+    }
+  </script>
+  <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js"
+    integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous">
+    </script>
+</head>
+
+<body>
+  <div class="home">
+    <div class="homepage-content">
+      <img class="sun" alt="" src="./images/home-images/sun.svg" />
+      <img class="cloud" alt="" src="./images/home-images/cloud.svg" />
+
+      <!--Navigation Bar-->
+      <div class="navigation-bar-container">
+        <div class="navigation-content">
+          <div class="logo-frame">
+            <img class="logo-skyforecast" alt="" src="./images/home-images/logo-skyforecast-color.svg" />
+          </div>
+        </div>
+        <div class="list-btn">
+          <button class="btn-home" id="btn-home">
+            <div class="menu">Home</div>
+          </button>
+          <button class="btn-weather" id="btn-weather">
+            <div class="menu">Weather</div>
+          </button>
+          <button class="btn-about-us" id="btn-abt-us">
+            <div class="menu">About Us</div>
+          </button>
+        </div>
+      </div>
+
+      <!--Weather Forecast Feature-->
+      <div class="weather-check-container">
+        <div class="heading">How’s the weather?</div>
+        <div class="weather-box">
+          <div class="location-feature">
+            <div class="weather-text">Check the weather in</div>
+            <form class="type-location" action="weather.html" method="GET">
+              <input class="type-box" type="text" name="location" placeholder="Enter a city name" required />
+
+              <button class="btn-search" type="submit">
+                <img class="search-icon" alt="" src="./images/home-images/search.svg" />
+              </button>
+
+            </form>
+          </div>
+          <div class="location-feature">
+            <div class="weather-text">or use</div>
+            <form action="weather.html">
+              <button class="btn-use-loc" type="submit">
+                <div class="text-your-location">Your Location</div>
+              </button>
+            </form>
+            <div class="weather-text">now!</div>
+          </div>
+        </div>
+      </div>
+
+      <!--Greetings-->
+      <div class="greetings-container">
+        <div class="heading">
+          Take a look at the sky around the world!
+        </div>
+        <div class="greetings-paragraph">
+          <p class="greetings-paragraph-one">
+            Welcome to our weather web-app! Whether you're planning your day,
+            preparing for a trip, or simply curious about the weather, our app
+            is here to provide you with accurate and up-to-date information.
+          </p>
+          <p class="greetings-paragraph-two">
+            With a clean and intuitive interface, you can easily search for
+            any location worldwide and access detailed weather forecasts. Stay
+            informed about temperature, humidity, wind speed, and
+            precipitation, all presented in a visually appealing manner. So,
+            get ready to explore the world of weather with our innovative
+            web-app and make every day a breeze!
+          </p>
+        </div>
+      </div>
+
+      <!--News Article-->
+      <div class="article-container">
+        <div class="heading">Weather & Climate On Our Planet</div>
+        <div class="article-menu">
+
+          <a class="btn-content"
+            href="https://www.independent.co.uk/climate-change/news/climate-change-risk-cities-india-china-us-b2285548.html"
+            target="_blank">
+
+            <button class="btn-content" id="button6ContentA">
+              <img class="content-image" alt="" src="./images/home-images/article-image-one.png" />
+
+              <div class="content-preview">
+                <div class="news-title">
+                  The key cities and regions most at risk from climate change in
+                  2050
+                </div>
+                <div class="news-text">
+                  Experts say ‘Asia has the most to lose’ from worsening extreme
+                  weather events
+                </div>
+                <div class="read-more">Read more
+                </div>
+              </div>
+            </button>
+
+          </a>
+
+          <a class="btn-content"
+            href="https://hakaimagazine.com/news/by-fighting-the-ozone-hole-we-accidentally-saved-ourselves/"
+            target="_blank">
+
+            <button class="btn-content" id="button7ContentB">
+              <img class="content-image" alt="" src="./images/home-images/article-image-two.png" />
+
+              <div class="content-preview">
+                <div class="news-title">
+                  By Fighting the Ozone Hole, We Accidentally Saved Ourselves
+                </div>
+                <div class="news-text">
+                  With the Montreal Protocol, life on Earth dodged a bullet we
+                  didn’t even know was headed our way.
+                </div>
+                <div class="read-more">Read more
+                </div>
+              </div>
+            </button>
+          </a>
+
+          <a class="btn-content" href="https://www.wired.com/story/seagrass-humble-ocean-plant-worth-trillions/"
+            target="_blank">
+
+            <button class="btn-content" id="button8ContentC">
+              <img class="content-image" alt="" src="./images/home-images/article-image-three.png" />
+
+              <div class="content-preview">
+                <div class="news-title">
+                  The Trillion-Dollar Auction to Save the World
+                </div>
+                <div class="news-text">
+                  Ocean creatures soak up huge amounts of humanity’s carbon
+                  mess.
+                </div>
+                <div class="read-more">Read more
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <!--Random Weather Forecast Report-->
+      <div class="random-weather-forecast-container">
+        <div class="forecast-report">
+          <div class="time-location">
+            <div class="time">Loading ...</div>
+            <div class="location"></div>
+          </div>
+          <div class="weather-status">
+            <div class="temp-cond">
+              <div class="temp">
+                <div class="celcius"></div>
+                <div class="fahrenheit"></div>
+              </div>
+              <div class="condition"></div>
+            </div>
+            <img class="icon-forecast" alt="" src="" />
+          </div>
+        </div>
+        <div class="forecast-report">
+          <div class="time-location">
+            <div class="time">Loading ...</div>
+            <div class="location"></div>
+          </div>
+          <div class="weather-status">
+            <div class="temp-cond">
+              <div class="temp">
+                <div class="celcius"></div>
+                <div class="fahrenheit"></div>
+              </div>
+              <div class="condition"></div>
+            </div>
+            <img class="icon-forecast" alt="" src="" />
+          </div>
+        </div>
+        <div class="forecast-report">
+          <div class="time-location">
+            <div class="time">Loading ...</div>
+            <div class="location"></div>
+          </div>
+          <div class="weather-status">
+            <div class="temp-cond">
+              <div class="temp">
+                <div class="celcius"></div>
+                <div class="fahrenheit"></div>
+              </div>
+              <div class="condition"></div>
+            </div>
+            <img class="icon-forecast" alt="" src="" />
+          </div>
+        </div>
+      </div>
+      <script src="./js/index.js"></script>
+
+      <!--Footer-->
+      <div class="footer">
+        <div class="copyright">
+          Copyright 2023 by SkyForecast for RevoU Kampus Merdeka Program.
+        </div>
+        <div class="copyright">|</div>
+        <div class="copyright">
+          <span>Powered by </span>
+          <a class="weather-api" href="https://www.weatherapi.com/" target="_blank">
+            <span class="weather-api-text">Weather API</span>
+          </a>
+          <span> and </span>
+          <a class="weather-api" href="http://www.geonames.org/" target="_blank">
+            <span class="weather-api-text">GeoNames</span>
+          </a>
+          <span>.</span>
+        </div>
+        <div class="footer-logo-frame">
+          <div class="logo-icon">
+            <img class="logo-skyforecast-grey" alt="" src="./images/home-images/logo-skyforecast-grey.svg" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const btnHome = document.getElementById("btn-home");
+    if (btnHome) {
+      btnHome.addEventListener("click", function (e) {
+        window.location.href = "index.html";
+      });
+    }
+    const btnWeather = document.getElementById("btn-weather");
+    if (btnWeather) {
+      btnWeather.addEventListener("click", function (e) {
+        window.location.href = "weather.html";
+      });
+    }
+    const btnAbtUs = document.getElementById("btn-abt-us");
+    if (btnAbtUs) {
+      btnAbtUs.addEventListener("click", function (e) {
+        window.location.href = "about-us.html";
+      });
+    }
+  </script>
+</body>
+
+</html>
