@@ -31,19 +31,23 @@
         </div>
       </div>
     </div>
-    <form class="weather-in-container" action="weather.html" method="GET">
-      <div class="text">Check the weather in</div>
-      <div class="city">
-        <input class="enter-city" type="text" name="location" placeholder="Enter a city name" />
-        <button class="btn-search" type="submit">
-          <img class="icon-search" alt="" src="./images/img-weather1/search.svg" />
+
+    <div class="input-current-container">
+      <form class="weather-in-container" action="weather.html" method="GET">
+        <div class="text">Check the weather in</div>
+        <div class="city">
+          <input class="enter-city" type="text" name="location" placeholder="Enter a city name" />
+          <button class="btn-search" type="submit">
+            <img class="icon-search" alt="" src="./images/img-weather1/search.svg" />
+          </button>
+        </div>
+        <div class="text">or in</div>
+        <button class="btn-use-loc" type="submit">
+          <div class="text-your-location">Your Location</div>
         </button>
-      </div>
-      <div class="text">or in</div>
-      <button class="btn-use-loc" type="submit">
-        <div class="text-your-location">Your Location</div>
-      </button>
-    </form>
+      </form>
+      <div class="error-message">Please enter a correct city name.</div>
+    </div>
 
     <!-- here -->
     <div class="forecast-feature">
@@ -302,17 +306,20 @@
           future!
         </div>
       </div>
-      <form class="frame-check-weather" action="weather.html" method="GET">
-        <div class="text">Check the weather in</div>
-        <input class="enter-city" type="text" name="location" placeholder="Enter a city name" required />
-        <div class="text">on</div>
-        <div class="city">
-          <input class="enter-date" type="date" name="future" id="ftr-date-picker" placeholder="Enter a future date" required />
-          <button class="btn-search" type="submit">
-            <img class="icon-search" alt="" src="./images/img-weather1/icon-search2.svg" />
-          </button>
-        </div>
-      </form>
+      <!-- <div class="input-future-container"> -->
+        <form class="frame-check-weather" action="weather.html" method="GET">
+          <div class="text">Check the weather in</div>
+          <input class="enter-city" type="text" name="location" placeholder="Enter a city name" required />
+          <div class="text">on</div>
+          <div class="city">
+            <input class="enter-date" type="date" name="future" id="ftr-date-picker" placeholder="Enter a future date" required />
+            <button class="btn-search" type="submit">
+              <img class="icon-search" alt="" src="./images/img-weather1/icon-search2.svg" />
+            </button>
+          </div>
+        </form>
+        <div class="error-message">Please enter a correct city name.</div>
+      <!-- </div> -->
       <img class="future-empty" id="future-empty" src="./images/img-weather1/future-empty.svg"/>
       <div class="frame-weather2" id="frame-weather2">
         <div class="weather-status">

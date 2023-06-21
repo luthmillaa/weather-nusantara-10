@@ -170,13 +170,25 @@ body {
 }
 
 .weather-in-container {
-  position: absolute;
-  top: 132px;
-  left: 40px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
+  gap: 12px;
+}
+
+.error-message {
+  display: none;
+  color: red;
+  font-size: medium;
+}
+
+.input-current-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 132px;
+  left: 40px;
   gap: 12px;
 }
 

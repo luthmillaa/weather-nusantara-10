@@ -5,24 +5,27 @@ function getParams() {
   const futureParam = urlParams.get('future');
   console.log(`params: ${locationParam} & ${futureParam}`);
 
-  if (!locationParam && !futureParam) {
-    // hanya fitur current weather menggunakan current location
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(callBackLocation);
+  try {
+    if (!locationParam && !futureParam) {
+      // hanya fitur current weather menggunakan current location
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(callBackLocation);
+      }
+    } else if (locationParam && !futureParam) {
+      // hanya fitur current weather menggunakan param location
+      currentWeather(locationParam, null);
+  
+    } else if (locationParam && futureParam) {
+      // fitur current & future weather menggunakan param location
+      currentWeather(locationParam, futureParam);
     }
-
-  } else if (locationParam && !futureParam) {
-    // hanya fitur current weather menggunakan param location
-    currentWeather(locationParam);
-    marineWeather(locationParam);
-    forecastWeather(locationParam);
-
-  } else if (locationParam && futureParam) {
-    // fitur current & future weather menggunakan param location
-    currentWeather(locationParam);
-    marineWeather(locationParam);
-    forecastWeather(locationParam);
-    futureWeather(locationParam, futureParam); // date must be in yyyy-MM-dd format
+  } catch (error) {
+    console.log('catch nih')
+    console.log(error);
+    const errorMessages = document.getElementsByClassName('error-message');
+    for (let i = 0; i < errorMessages.length; i ++) {
+      errorMessages[i].setAttribute('style', 'display:block')
+    }
   }
 }
 
@@ -33,12 +36,10 @@ function getDayName(date) {
 
 function callBackLocation(position) {
   const latLong = `${position.coords.latitude},${position.coords.longitude}`
-  currentWeather(latLong);
-  marineWeather(latLong);
-  forecastWeather(latLong);
+  currentWeather(latLong, null);
 }
 
-function currentWeather(location) {
+function currentWeather(location, future) {
   console.log(`current weather: ${location}`);
   const apiKey = '61082700d6284853a6e92559231506'; // Ganti dengan kunci API cuaca yang valid
   const urlCurrent = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}&aqi=yes`;
@@ -109,12 +110,19 @@ function currentWeather(location) {
         elConditionImg.src = conditionImg;
       }
     })
+    .then(() => marineWeather(location, future))
     .catch(error => {
-      console.log('Error fetching current weather:', error);
+      // console.log('Error fetching current weather:', error);
+      console.log('throw di current')
+      const errorMessages = document.getElementsByClassName('error-message');
+      for (let i = 0; i < errorMessages.length; i ++) {
+        errorMessages[i].setAttribute('style', 'display:block')
+      }
+      throw new Error(error);
     });
 }
 
-function marineWeather(location) {
+function marineWeather(location, future) {
   console.log(`marine weather: ${location}`);
   const apiKey = '61082700d6284853a6e92559231506'; // Ganti dengan kunci API cuaca yang valid
   const urlMarine = `http://api.weatherapi.com/v1/marine.json?key=${apiKey}&q=${location}`;
@@ -140,12 +148,19 @@ function marineWeather(location) {
         elVis.textContent = `${mrnData.avgvis_miles} miles / ${mrnData.avgvis_km} km`;
       }
     })
+    .then(() => forecastWeather(location, future))
     .catch(error => {
-      console.log('Error fetching marine weather:', error);
+      // console.log('Error fetching marine weather:', error);
+      console.log('throw di marine')
+      const errorMessages = document.getElementsByClassName('error-message');
+      for (let i = 0; i < errorMessages.length; i ++) {
+        errorMessages[i].setAttribute('style', 'display:block')
+      }
+      throw new Error(error);
     });
 }
 
-function forecastWeather(location) {
+function forecastWeather(location, future) {
   console.log(`forecast weather: ${location}`);
   const apiKey = '61082700d6284853a6e92559231506'; // Ganti dengan kunci API cuaca yang valid
   const urlForecast = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=4&aqi=yes&alerts=no`;
@@ -201,11 +216,21 @@ function forecastWeather(location) {
       }
     })
     .then(() => {
-      $('#forecast-empty').hide();
-      $('#frame-column').css('display', 'flex');
+      if (future) {
+        futureWeather(location, future);
+      } else {
+        $('#forecast-empty').hide();
+        $('#frame-column').css('display', 'flex');
+      }
     })
     .catch(error => {
-      console.log('Error fetching forecast weather:', error);
+      // console.log('Error fetching forecast weather:', error);
+      console.log('throw di forecast')
+      const errorMessages = document.getElementsByClassName('error-message');
+      for (let i = 0; i < errorMessages.length; i ++) {
+        errorMessages[i].setAttribute('style', 'display:block')
+      }
+      throw new Error(error);
     });
 }
 
@@ -214,7 +239,6 @@ function futureWeather(location, date) {
   const apiKey = '61082700d6284853a6e92559231506'; // Ganti dengan kunci API cuaca yang valid
   const urlFuture = `http://api.weatherapi.com/v1/future.json?key=${apiKey}&q=${location}&dt=${date}`;
 
-  // TODO
   fetch(urlFuture)
     .then(response => response.json())
     .then(data => {
@@ -247,11 +271,19 @@ function futureWeather(location, date) {
       }
     })
     .then(() => {
+      $('#forecast-empty').hide();
+      $('#frame-column').css('display', 'flex');
       $('#future-empty').hide();
       $('#frame-weather2').css('display', 'flex');
     })
     .catch(error => {
-      console.log('Error fetching forecast weather:', error);
+      // console.log('Error fetching forecast weather:', error);
+      console.log('throw di future')
+      const errorMessages = document.getElementsByClassName('error-message');
+      for (let i = 0; i < errorMessages.length; i ++) {
+        errorMessages[i].setAttribute('style', 'display:block')
+      }
+      throw new Error(error);
     })
 }
 
