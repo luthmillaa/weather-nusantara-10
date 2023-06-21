@@ -24,6 +24,7 @@ function getParams() {
     forecastWeather(locationParam);
     futureWeather(locationParam, futureParam); // date must be in yyyy-MM-dd format
 
+    // TODO - move this after fetching future weather
     $('#forecast-empty').hide();
     $('#future-empty').hide();
     $('#frame-column').css('display', 'flex');
@@ -128,7 +129,6 @@ function marineWeather(location) {
     .then(response => response.json())
     .then(data => {
       if (data) {
-        console.log(data);
         const mrnData = data.forecast.forecastday[0].day;
         const container = document.querySelector('.frame-marine');
 
@@ -154,12 +154,58 @@ function marineWeather(location) {
 function forecastWeather(location) {
   console.log(`forecast weather: ${location}`);
   const apiKey = '61082700d6284853a6e92559231506'; // Ganti dengan kunci API cuaca yang valid
-  const urlForecast = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=3&aqi=yes&alerts=no`;
+  const urlForecast = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=4&aqi=yes&alerts=no`;
   
   fetch(urlForecast)
     .then(response => response.json())
     .then(data => {
-      // TODO
+      if (data) {
+        const forecastDays = data.forecast.forecastday; // 3 days forecast data
+        forecastDays.splice(0, 1);
+        console.log(forecastDays);
+        const container = document.querySelector('.day-date2');
+        const dayContainers = container.querySelectorAll('.day-date-local'); // 3 days forecast container
+
+        forecastDays.forEach((value, index) => {
+          const currContainer = dayContainers[index];
+          const elDayDate = currContainer.querySelector('#fc-day');
+          elDayDate.textContent = `${getDayName(value.date)}, ${value.date}`;
+
+          const day = value.day;
+          const elTempC = currContainer.querySelector('#fc-c');
+          elTempC.textContent = `${day.avgtemp_c}°C`;
+          const elTempF = currContainer.querySelector('#fc-f');
+          elTempF.textContent = `/ ${day.avgtemp_f}°F`;
+          const elCondition = currContainer.querySelector('#fc-condition');
+          elCondition.textContent = `${day.condition.text}`;
+
+          const hours = value.hour;
+          const elTemp6am = currContainer.querySelector('#fc-temp-6am');
+          elTemp6am.textContent = `${hours[6].temp_c}°C / ${hours[6].temp_f}°F`;
+          const elCond6am = currContainer.querySelector('#fc-cond-6am');
+          elCond6am.textContent = `${hours[6].condition.text}`;
+          const elTemp9am = currContainer.querySelector('#fc-temp-9am');
+          elTemp9am.textContent = `${hours[9].temp_c}°C / ${hours[9].temp_f}°F`;
+          const elCond9am = currContainer.querySelector('#fc-cond-9am');
+          elCond9am.textContent = `${hours[9].condition.text}`;
+          const elTemp12pm = currContainer.querySelector('#fc-temp-12pm');
+          elTemp12pm.textContent = `${hours[12].temp_c}°C / ${hours[12].temp_f}°F`;
+          const elCond12pm = currContainer.querySelector('#fc-cond-12pm');
+          elCond12pm.textContent = `${hours[12].condition.text}`;
+          const elTemp3pm = currContainer.querySelector('#fc-temp-3pm');
+          elTemp3pm.textContent = `${hours[15].temp_c}°C / ${hours[15].temp_f}°F`;
+          const elCond3pm = currContainer.querySelector('#fc-cond-3pm');
+          elCond3pm.textContent = `${hours[15].condition.text}`;
+          const elTemp6pm = currContainer.querySelector('#fc-temp-6pm');
+          elTemp6pm.textContent = `${hours[18].temp_c}°C / ${hours[18].temp_f}°F`;
+          const elCond6pm = currContainer.querySelector('#fc-cond-6pm');
+          elCond6pm.textContent = `${hours[18].condition.text}`;
+          const elTemp9pm = currContainer.querySelector('#fc-temp-9pm');
+          elTemp9pm.textContent = `${hours[21].temp_c}°C / ${hours[21].temp_f}°F`;
+          const elCond9pm = currContainer.querySelector('#fc-cond-9pm');
+          elCond9pm.textContent = `${hours[21].condition.text}`;
+        });
+      }
     })
     .then(() => {
       $('#forecast-empty').hide();
