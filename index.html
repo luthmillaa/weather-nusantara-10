@@ -70,7 +70,6 @@
         <div class="weather-box">
           <div class="location-feature">
             <div class="weather-text">Check the weather in</div>
-            <!-- TODO - adjust action -->
             <form class="type-location" action="weather.html" method="GET">
               <input class="type-box" type="text" name="location" placeholder="Enter a city name" required />
 
@@ -82,7 +81,6 @@
           </div>
           <div class="location-feature">
             <div class="weather-text">or use</div>
-            <!-- TODO - adjust action -->
             <form action="weather.html">
               <button class="btn-use-loc" type="submit">
                 <div class="text-your-location">Your Location</div>
@@ -266,7 +264,6 @@
   </div>
 
   <script>
-    // TODO - adjust href
     const btnHome = document.getElementById("btn-home");
     if (btnHome) {
       btnHome.addEventListener("click", function (e) {
@@ -282,7 +279,7 @@
     const btnAbtUs = document.getElementById("btn-abt-us");
     if (btnAbtUs) {
       btnAbtUs.addEventListener("click", function (e) {
-        window.location.href = "./about-us.html";
+        window.location.href = "about-us.html";
       });
     }
   </script>
