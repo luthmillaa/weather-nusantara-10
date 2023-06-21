@@ -1,9 +1,10 @@
 function getParams() {
   const queryString = window.location.search;
+  console.log(queryString);
   const urlParams = new URLSearchParams(queryString);
   const locationParam = urlParams.get('location');
   const futureParam = urlParams.get('future');
-  // console.log(`params: ${locationParam} & ${futureParam}`);
+  console.log(`params: ${locationParam} & ${futureParam}`);
 
   try {
     if (!locationParam && !futureParam) {
@@ -113,7 +114,7 @@ function currentWeather(location, future) {
     .then(() => marineWeather(location, future))
     .catch(error => {
       // console.log('Error fetching current weather:', error);
-      console.log('throw di current')
+      // console.log('throw di current')
       const errorMessages = document.getElementsByClassName('error-message');
       for (let i = 0; i < errorMessages.length; i++) {
         errorMessages[i].setAttribute('style', 'display:block')
@@ -123,7 +124,7 @@ function currentWeather(location, future) {
 }
 
 function marineWeather(location, future) {
-  console.log(`marine weather: ${location}`);
+  // console.log(`marine weather: ${location}`);
   const apiKey = '61082700d6284853a6e92559231506'; // Ganti dengan kunci API cuaca yang valid
   const urlMarine = `https://api.weatherapi.com/v1/marine.json?key=${apiKey}&q=${location}`;
 
@@ -151,7 +152,7 @@ function marineWeather(location, future) {
     .then(() => forecastWeather(location, future))
     .catch(error => {
       // console.log('Error fetching marine weather:', error);
-      console.log('throw di marine')
+      // console.log('throw di marine')
       const errorMessages = document.getElementsByClassName('error-message');
       for (let i = 0; i < errorMessages.length; i++) {
         errorMessages[i].setAttribute('style', 'display:block')
@@ -161,7 +162,7 @@ function marineWeather(location, future) {
 }
 
 function forecastWeather(location, future) {
-  console.log(`forecast weather: ${location}`);
+  // console.log(`forecast weather: ${location}`);
   const apiKey = '61082700d6284853a6e92559231506'; // Ganti dengan kunci API cuaca yang valid
   const urlForecast = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=4&aqi=yes&alerts=no`;
 
@@ -225,7 +226,7 @@ function forecastWeather(location, future) {
     })
     .catch(error => {
       // console.log('Error fetching forecast weather:', error);
-      console.log('throw di forecast')
+      // console.log('throw di forecast')
       const errorMessages = document.getElementsByClassName('error-message');
       for (let i = 0; i < errorMessages.length; i++) {
         errorMessages[i].setAttribute('style', 'display:block')
@@ -235,7 +236,7 @@ function forecastWeather(location, future) {
 }
 
 function futureWeather(location, date) {
-  console.log(`future weather: ${location} in ${date}`);
+  // console.log(`future weather: ${location} in ${date}`);
   const apiKey = '61082700d6284853a6e92559231506'; // Ganti dengan kunci API cuaca yang valid
   const urlFuture = `https://api.weatherapi.com/v1/future.json?key=${apiKey}&q=${location}&dt=${date}`;
 
@@ -278,7 +279,7 @@ function futureWeather(location, date) {
     })
     .catch(error => {
       // console.log('Error fetching forecast weather:', error);
-      console.log('throw di future')
+      // console.log('throw di future')
       const errorMessages = document.getElementsByClassName('error-message');
       for (let i = 0; i < errorMessages.length; i++) {
         errorMessages[i].setAttribute('style', 'display:block')
