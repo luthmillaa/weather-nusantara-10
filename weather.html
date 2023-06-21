@@ -4,20 +4,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="initial-scale=1, width=device-width" />
-  <link rel="stylesheet" href="./weather.css" />
+  <link rel="stylesheet" href="./css/weather.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap" />
 </head>
 
 <body>
   <div class="background">
-    <img class="bg-matahari" alt="" src="./img-weather1/matahari.svg" />
+    <img class="bg-matahari" alt="" src="./images/img-weather1/matahari.svg" />
 
-    <img class="bg-awan1" alt="" src="./img-weather1/awan.svg" />
-    <img class="bg-awan2" alt="" src="./img-weather1/awan.svg" />
+    <img class="bg-awan1" alt="" src="./images/img-weather1/awan.svg" />
+    <img class="bg-awan2" alt="" src="./images/img-weather1/awan.svg" />
 
     <div class="bg-logo">
       <div class="logo-menu-atas">
-        <img class="logo-warna" alt="" src="./img-weather1/logo-warna.svg" />
+        <img class="logo-warna" alt="" src="./images/img-weather1/logo-warna.svg" />
       </div>
       <div class="list-buttonn">
         <div class="home-frame" id="btn-home">
@@ -36,7 +36,7 @@
       <div class="city">
         <input class="enter-city" type="text" name="location" placeholder="Enter a city name" />
         <button class="btn-search" type="submit">
-          <img class="icon-search" alt="" src="./img-weather1/search.svg" />
+          <img class="icon-search" alt="" src="./images/img-weather1/search.svg" />
         </button>
       </div>
       <div class="text">or in</div>
@@ -47,7 +47,7 @@
 
     <!-- here -->
     <div class="forecast-feature">
-      <img class="forecast-empty" id="forecast-empty" src="./img-weather1/forecast-empty.svg" />
+      <img class="forecast-empty" id="forecast-empty" src="./images/img-weather1/forecast-empty.svg" />
       <div class="frame-column" id="frame-column">
         <div class="frame-row">
           <div class="main-frame-weather">
@@ -154,7 +154,7 @@
                 <div class="day">Take a look at the</div>
                 <div class="days-forecast">3 Days Forecast</div>
               </div>
-              <img class="vector-icon3" alt="" src="./img-weather1/bg-button.svg" />
+              <img class="vector-icon3" alt="" src="./images/img-weather1/bg-button.svg" />
             </div>
           </div>
         </div>
@@ -289,31 +289,6 @@
             </div>
           </div>
         </div>
-        <!-- <div class="see-3-day">
-          <div class="temperature-celcius">Alerts in 3 Days</div>
-          <div class="frame-event">
-            <div class="frame-event2">
-              <div class="event-parent">
-                <div class="event">{event}!</div>
-                <div class="areas">{areas}.</div>
-              </div>
-              <div class="issued-effective">
-                <div class="areas">Issued {effective in format dd-MMMM-yyyy}</div>
-                <div class="areas">until {expires in format dd-MMMM-yyyy}.</div>
-              </div>
-            </div>
-            <div class="frame-event2">
-              <div class="event-parent">
-                <div class="event">{event}!</div>
-                <div class="areas">{areas}.</div>
-              </div>
-              <div class="issued-effective">
-                <div class="areas">Issued {effective in format dd-MMMM-yyyy}</div>
-                <div class="areas">until {expires in format dd-MMMM-yyyy}.</div>
-              </div>
-            </div>
-          </div>
-        </div> -->
       </div>
     </div>
     <!-- here -->
@@ -334,11 +309,11 @@
         <div class="city">
           <input class="enter-date" type="date" name="future" id="ftr-date-picker" placeholder="Enter a future date" required />
           <button class="btn-search" type="submit">
-            <img class="icon-search" alt="" src="./img-weather1/icon-search2.svg" />
+            <img class="icon-search" alt="" src="./images/img-weather1/icon-search2.svg" />
           </button>
         </div>
       </form>
-      <img class="future-empty" id="future-empty" src="./img-weather1/future-empty.svg"/>
+      <img class="future-empty" id="future-empty" src="./images/img-weather1/future-empty.svg"/>
       <div class="frame-weather2" id="frame-weather2">
         <div class="weather-status">
           <div class="weather-status2">
@@ -398,17 +373,18 @@
       </div>
       <div class="logo-frame">
         <div class="logo-bawah">
-          <img class="logo-footer" alt="" src="./img-weather1/logo-footerr.svg" />
+          <img class="logo-footer" alt="" src="./images/img-weather1/logo-footerr.svg" />
         </div>
       </div>
     </div>
   </div>
 
   <script>
+    // TODO - adjust href
     var btnHome = document.getElementById("btn-home");
     if (btnHome) {
       btnHome.addEventListener("click", function (e) {
-        window.location.href = "home-index.html";
+        window.location.href = "index.html";
       });
     }
     var btnWeather = document.getElementById("btn-weather");
@@ -436,7 +412,7 @@
   <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js"
     integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous">
     </script>
-  <script src="weather.js" />
+  <script src="./js/weather.js" />
 </body>
 
 </html>
