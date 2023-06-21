@@ -14,11 +14,13 @@ function getParams() {
   } else if (locationParam && !futureParam) {
     // hanya fitur current weather menggunakan param location
     currentWeather(locationParam);
+    marineWeather(locationParam);
     forecastWeather(locationParam);
 
   } else if (locationParam && futureParam) {
     // fitur current & future weather menggunakan param location
     currentWeather(locationParam);
+    marineWeather(locationParam);
     forecastWeather(locationParam);
     futureWeather(locationParam, futureParam); // date must be in yyyy-MM-dd format
 
@@ -35,15 +37,17 @@ function getDayName(date) {
 }
 
 function callBackLocation(position) {
-  currentWeather(`${position.coords.latitude},${position.coords.longitude}`);
+  const latLong = `${position.coords.latitude},${position.coords.longitude}`
+  currentWeather(latLong);
+  marineWeather(latLong);
+  forecastWeather(latLong);
 }
 
 function currentWeather(location) {
-  console.log(`current weather: ${location}`)
+  console.log(`current weather: ${location}`);
   const apiKey = '61082700d6284853a6e92559231506'; // Ganti dengan kunci API cuaca yang valid
   const urlCurrent = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}&aqi=yes`;
 
-  // TODO
   fetch(urlCurrent)
     .then(response => response.json())
     .then(data => {
@@ -110,20 +114,60 @@ function currentWeather(location) {
         elConditionImg.src = conditionImg;
       }
     })
-    .then(() => {
-      $('#forecast-empty').hide();
-      $('#frame-column').css('display', 'flex');
-    })
     .catch(error => {
       console.log('Error fetching current weather:', error);
     });
 }
 
+function marineWeather(location) {
+  console.log(`marine weather: ${location}`);
+  const apiKey = '61082700d6284853a6e92559231506'; // Ganti dengan kunci API cuaca yang valid
+  const urlMarine = `http://api.weatherapi.com/v1/marine.json?key=${apiKey}&q=${location}`;
+
+  fetch(urlMarine)
+    .then(response => response.json())
+    .then(data => {
+      if (data) {
+        console.log(data);
+        const mrnData = data.forecast.forecastday[0].day;
+        const container = document.querySelector('.frame-marine');
+
+        const elTempC = container.querySelector('#mrn-c');
+        elTempC.textContent = `${mrnData.avgtemp_c}°C`;
+        const elTempF = container.querySelector('#mrn-f');
+        elTempF.textContent = `/ ${mrnData.avgtemp_f}°F`;
+        const elCondition = container.querySelector('#mrn-condition');
+        elCondition.textContent = `${mrnData.condition.text}`;
+        const elWindSpeed = container.querySelector('#mrn-wind-speed');
+        elWindSpeed.textContent = `${mrnData.maxwind_mph} mph / ${mrnData.maxwind_kph} kph`;
+        const elHumidity = container.querySelector('#mrn-humidity');
+        elHumidity.textContent = `${mrnData.avghumidity} %`;
+        const elVis = container.querySelector('#mrn-vis');
+        elVis.textContent = `${mrnData.avgvis_miles} miles / ${mrnData.avgvis_km} km`;
+      }
+    })
+    .catch(error => {
+      console.log('Error fetching marine weather:', error);
+    });
+}
+
 function forecastWeather(location) {
-  console.log(`forecast weather: ${location}`)
+  console.log(`forecast weather: ${location}`);
   const apiKey = '61082700d6284853a6e92559231506'; // Ganti dengan kunci API cuaca yang valid
   const urlForecast = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=3&aqi=yes&alerts=no`;
-  // TODO
+  
+  fetch(urlForecast)
+    .then(response => response.json())
+    .then(data => {
+      // TODO
+    })
+    .then(() => {
+      $('#forecast-empty').hide();
+      $('#frame-column').css('display', 'flex');
+    })
+    .catch(error => {
+      console.log('Error fetching forecast weather:', error);
+    });
 }
 
 function futureWeather(location, date) {

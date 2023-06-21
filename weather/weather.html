@@ -131,28 +131,24 @@
                 <div class="c">Marine Weather</div>
                 <div class="temperature">
                   <div class="group-temperature">
-                    <div class="c">00°C</div>
-                    <div class="city-name-country">/ 00°F</div>
+                    <div class="c" id="mrn-c">...°C</div>
+                    <div class="city-name-country" id="mrn-f">/ ...°F</div>
                   </div>
-                  <div class="condition">{Condition: Text}</div>
+                  <div class="condition" id="mrn-condition">...</div>
                 </div>
               </div>
               <div class="frame-wind">
                 <div class="label-parent">
                   <div class="label">Max Wind Speed</div>
-                  <div class="value">
-                    {maxwind_mph} mph / {maxwind_kph} kph
-                  </div>
+                  <div class="value" id="mrn-wind-speed">...</div>
                 </div>
                 <div class="label-parent">
                   <div class="label">Average Humidity</div>
-                  <div class="value">{avghumidity} %</div>
+                  <div class="value" id="mrn-humidity">...</div>
                 </div>
                 <div class="label-parent">
                   <div class="label">Average Visibility</div>
-                  <div class="value">
-                    {avgvis_miles} miles / {avgvis_km} km
-                  </div>
+                  <div class="value" id="mrn-vis">...</div>
                 </div>
               </div>
             </div>
