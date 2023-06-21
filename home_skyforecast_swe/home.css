@@ -1,0 +1,477 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+.homepage-content {
+  position: absolute;
+  top: 0;
+  left: -139px;
+  width: 1579px;
+  height: 1394px;
+}
+.home {
+  position: relative;
+  background-color: white;
+  width: 100%;
+  height: 1394px;
+  overflow: hidden;
+  text-align: left;
+  font-size: 28px;
+  color: black;
+  font-family: lexend;
+}
+.sun {
+  position: absolute;
+  top: 0;
+  right: -75.5px;
+  width: 520px;
+  height: 520px;
+  opacity: 0.75;
+}
+.cloud {
+  position: absolute;
+  top: 402px;
+  left: 0px;
+  width: 557px;
+  height: 371px;
+  opacity: 0.65;
+}
+
+/*Navigation Bar*/
+
+.navigation-bar-container {
+  position: absolute;
+  top: 0;
+  left: 139px;
+  background-color: #FFFFFF;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  width: 1480px;                                        
+  height: 72px;
+  overflow: hidden;
+  padding: 10px 40px;
+  box-sizing: border-box;
+  gap: 40px;
+}
+.navigation_content {
+  width: 216px;
+  flex-direction: column;
+}
+.logo-frame {
+  width: 216px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  padding: 4.51515px 9.0303px 4.51515px 4.51515px;
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: center;
+}
+.logo-skyforecast {
+  position: relative;
+  width: 195.99px;
+  height: 38.94px;
+}
+.list-btn {
+  gap: 16px;
+}
+.list-btn,
+.navigation-bar-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.btn-home,
+.navigation-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-home {
+  cursor: pointer;
+  border: 2px solid #3400CA;
+  padding: 8px 20px;
+  background-color: transparent;
+  border-radius: 22px;
+  flex-direction: row;
+}
+.menu {
+  position: relative;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Lexend';
+  color: #3400CA;
+  text-align: left;
+}
+.btn-weather, .btn-about-us {
+  cursor: pointer;
+  border: 0;
+  padding: 8px 20px;
+  background-color: transparent;
+  border-radius: 22px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+/*Weather Forecast Feature*/
+
+.weather-box,
+.weather-check-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.weather-box {
+  gap: 16px;
+  font-size: 20px;
+}
+.weather-check-container {
+  position: absolute;
+  top: 152px;
+  left: 179px;
+  gap: 32px;
+  font-size: 64px;
+}
+.heading {
+  position: relative;
+  font-weight: 600;
+}
+.location-feature,
+.type-location {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.type-location {
+  width: 300px;
+  gap: 8px;
+}
+.location-feature {
+  gap: 12px;
+}
+.weather-text {
+  position: relative;
+}
+.type-box {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  font-family: 'Lexend';
+  font-size: 16px;
+  background-color: #FFFFFF;
+  align-self: stretch;
+  flex: 1;
+  border-radius: 22px;
+  display: flex;
+  flex-direction: row;
+  padding: 8px 20px;
+  align-items: center;
+  justify-content: flex-start;
+}
+.btn-search {
+  cursor: pointer;
+  border: 0;
+  padding: 8px 16px;
+  background-color: #3400CA;
+  border-radius: 22px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.search-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.btn-use-loc {
+  cursor: pointer;
+  border: 0;
+  padding: 8px 20px;
+  background-color: #3400CA;
+  border-radius: 22px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.text-your-location {
+  position: relative;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Lexend';
+  color: #FFFFFF;
+  text-align: left;
+}
+
+/*Greetings*/
+
+.greetings-container {
+  position: absolute;
+  top: 502px;
+  left: 179px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 16px;
+}
+.greetings-paragraph {
+  position: relative;
+  font-size: 16px;
+  line-height: 140%;
+  font-weight: 300;
+  display: inline-block;
+  width: 788px;
+}
+.greetings-paragraph-one {
+  margin-block-start: 0;
+  margin-block-end: 12px;
+}
+.greetings-paragraph-two {
+  margin: 0;
+}
+
+/*News Article*/
+
+.article-container,
+.article-menu {
+  display: flex;
+  gap: 32px;
+}
+.article-menu {
+  width: 1360px;
+  flex-direction: row;
+  padding: 0 32px;
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: center;
+}
+.article-container {
+  position: absolute;
+  top: 833px;
+  left: 179px;
+  border-radius: 24px;
+  background-color: #FFFFFF;
+  border: 2px solid rgba(52, 0, 202, 0.4);
+  overflow: hidden;
+  flex-direction: column;
+  padding: 20px 0px 32px;
+  align-items: center;
+  justify-content: flex-start;
+}
+.btn-content,
+.content-preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.content-preview {
+  align-self: stretch;
+  padding: 20px 16px;
+  align-items: flex-start;
+  gap: 20px;
+}
+.btn-content {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  flex: 1;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  align-items: center;
+}
+.content-image {
+  align-self: stretch;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  height: 140px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.news-text,
+.read-more,
+.news-title {
+  position: relative;
+  font-family: 'Lexend';
+  text-align: left;
+}
+.news-title {
+  align-self: stretch;
+  font-size: 20px;
+  font-weight: 500;
+  color: #000000;
+}
+.news-text,
+.read-more {
+  font-size: 16px;
+}
+.news-text {
+  align-self: stretch;
+  line-height: 140%;
+  font-weight: 300;
+  color: #000000;
+}
+.read-more {
+  text-decoration: underline;
+  font-weight: 600;
+  color: #3400CA;
+}
+
+/*Random Weather Forecast Report*/
+
+.forecast-report,
+.random-weather-forecast-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.forecast-report {
+  align-self: stretch;
+  border-radius: 24px;
+  background-color: rgba(0, 0, 0, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(52, 0, 202, 0.4);
+  padding: 20px 24px;
+  gap: 32px;
+}
+.random-weather-forecast-container {
+  position: absolute;
+  top: 132px;
+  left: 1094px;
+  width: 445px;
+  gap: 20px;
+  
+}
+.time {
+  position: relative;
+  font-weight: 300;
+  font-size: 14px;
+}
+.location, .fahrenheit {
+  position: relative;
+  font-size: 16px;
+}
+.time-location {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 4px;
+}
+.weather-status {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-size: 32px;
+}
+.temp-cond-a {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.temp {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.c {
+  position: relative;
+  font-weight: 500;
+}
+.condition {
+  position: relative;
+  font-size: 20px;
+  font-weight: 500;
+}
+.icon-forecast {
+  align-self: stretch;
+  position: relative;
+  max-height: 100%;
+  width: 73px;
+  object-fit: cover;
+}
+
+/*Footer*/
+
+.footer {
+  position: absolute;
+  top: 1346px;
+  left: 139px;
+  background-color: #FFFFFF;
+  box-shadow: 0-4px 20px rgba(0, 0, 0, 0.2);
+  width: 1480px;                                
+  height: 48px;
+  overflow: hidden;
+  flex-direction: row;
+  padding: 10px 40px;
+  box-sizing: border-box;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.copyright {
+  position: relative;
+  line-height: 140%;
+  font-weight: 300;
+}
+.weather-api {
+  color: #3400CA;
+}
+.weather-api-text {
+  text-decoration: underline;
+}
+.footer,
+.footer-logo-frame,
+.logo {
+  display: flex;
+  justify-content: center;
+}
+.footer-logo-frame {
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.logo-icon {
+  width: 102px;
+  height: 23.61px;
+  flex-direction: column;
+  padding: 2.13215px 4.26431px 2.13215px 2.13215px;
+  box-sizing: border-box;
+  align-items: flex-start;
+}
+.logo-skyforecast-grey {
+  position: relative;
+  width: 92.55px;
+  height: 18.39px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
