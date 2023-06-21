@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+  <link rel="stylesheet" href="./weather.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap" />
+</head>
+
+<body>
+  <div class="background">
+    <img class="bg-matahari" alt="" src="./img-weather1/matahari.svg" />
+
+    <img class="bg-awan1" alt="" src="./img-weather1/awan.svg" />
+    <img class="bg-awan2" alt="" src="./img-weather1/awan.svg" />
+
+    <div class="bg-logo">
+      <div class="logo-menu-atas">
+        <img class="logo-warna" alt="" src="./img-weather1/logo-warna.svg" />
+      </div>
+      <div class="list-buttonn">
+        <div class="home-frame" id="btn-home">
+          <div class="menu-item-text">Home</div>
+        </div>
+        <div class="weather-frame" id="btn-weather">
+          <div class="menu-item-text">Weather</div>
+        </div>
+        <div class="home-frame" id="btn-abt-us">
+          <div class="menu-item-text">About Us</div>
+        </div>
+      </div>
+    </div>
+    <form class="weather-in-container" action="weather.html" method="GET">
+      <div class="text">Check the weather in</div>
+      <div class="city">
+        <input class="enter-city" type="text" name="location" placeholder="Enter a city name" />
+        <button class="btn-search" type="submit">
+          <img class="icon-search" alt="" src="./img-weather1/search.svg" />
+        </button>
+      </div>
+      <div class="text">or in</div>
+      <button class="btn-use-loc" type="submit">
+        <div class="text-your-location">Your Location</div>
+      </button>
+    </form>
+
+    <!-- here -->
+    <div class="forecast-feature">
+      <img class="forecast-empty" id="forecast-empty" src="./img-weather1/forecast-empty.svg" />
+      <div class="frame-column" id="frame-column">
+        <div class="frame-row">
+          <div class="main-frame-weather">
+            <div class="weather-status">
+              <div class="weather-status2">
+                <div class="day-date">
+                  <div class="day">...</div>
+                  <div class="city-name-country">...</div>
+                </div>
+                <div class="status-derajat">
+                  <div class="c">...°C</div>
+                  <div class="f">/ ...°F</div>
+                </div>
+              </div>
+              <div class="condition-text">
+                <div class="condition">...</div>
+                <img class="item-kosong" id="condition-img" alt="" src="" />
+              </div>
+            </div>
+            <div class="frame-weather">
+              <div class="frame-wind">
+                <div class="label-parent">
+                  <div class="label">Wind Speed</div>
+                  <div class="value" id="wind-speed">...</div>
+                </div>
+                <div class="label-parent">
+                  <div class="label">Wind Direction</div>
+                  <div class="value" id="wind-dir">...</div>
+                </div>
+                <div class="label-parent">
+                  <div class="label">Humidity</div>
+                  <div class="value" id="humidity">...</div>
+                </div>
+                <div class="label-parent">
+                  <div class="label">Cloud Cover</div>
+                  <div class="value" id="cloud">...</div>
+                </div>
+                <div class="label-parent">
+                  <div class="label">Visibility</div>
+                  <div class="value" id="vis">...</div>
+                </div>
+                <div class="label-parent">
+                  <div class="label">UV Index</div>
+                  <div class="value" id="uv">...</div>
+                </div>
+              </div>
+              <div class="frame-wind2">
+                <div class="label-parent">
+                  <div class="c" id="us-epa-index">...</div>
+                  <div class="day"> (based on US - EPA standard)</div>
+                </div>
+                <div class="label-parent">
+                  <div class="label">CO</div>
+                  <div class="value" id="co">...</div>
+                </div>
+                <div class="label-parent">
+                  <div class="label">NO2</div>
+                  <div class="value" id="no2">...</div>
+                </div>
+                <div class="label-parent">
+                  <div class="label">O3</div>
+                  <div class="value" id="o3">...</div>
+                </div>
+                <div class="label-parent">
+                  <div class="label">SO2</div>
+                  <div class="value" id="so2">...</div>
+                </div>
+                <div class="label-parent">
+                  <div class="label">Particle Pollution</div>
+                  <div class="value" id="pm10">...</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="frame-marine">
+            <div class="frame-parent39">
+              <div class="descrip-text">
+                <div class="c">Marine Weather</div>
+                <div class="temperature">
+                  <div class="group-temperature">
+                    <div class="c" id="mrn-c">...°C</div>
+                    <div class="city-name-country" id="mrn-f">/ ...°F</div>
+                  </div>
+                  <div class="condition" id="mrn-condition">...</div>
+                </div>
+              </div>
+              <div class="frame-wind">
+                <div class="label-parent">
+                  <div class="label">Max Wind Speed</div>
+                  <div class="value" id="mrn-wind-speed">...</div>
+                </div>
+                <div class="label-parent">
+                  <div class="label">Average Humidity</div>
+                  <div class="value" id="mrn-humidity">...</div>
+                </div>
+                <div class="label-parent">
+                  <div class="label">Average Visibility</div>
+                  <div class="value" id="mrn-vis">...</div>
+                </div>
+              </div>
+            </div>
+            <div class="group-div">
+              <div class="take-a-look-at-the-parent">
+                <div class="day">Take a look at the</div>
+                <div class="days-forecast">3 Days Forecast</div>
+              </div>
+              <img class="vector-icon3" alt="" src="./img-weather1/bg-button.svg" />
+            </div>
+          </div>
+        </div>
+        <div class="day-city">
+          <div class="c">3 Days Forecast in ...</div>
+          <div class="day-date2">
+            <div class="day-date-local">
+              <div class="day" id="fc-day">...</div>
+              <div class="frame-temperature">
+                <div class="group-temperature">
+                  <div class="c" id="fc-c">...°C</div>
+                  <div class="city-name-country" id="fc-f">/ ...°F</div>
+                </div>
+                <div class="condition-text2" id="fc-condition">...</div>
+              </div>
+              <div class="descrip-text">
+                <div class="label-parent">
+                  <div class="time">6 AM</div>
+                  <div class="value" id="fc-temp-6am">...°C / ...°F</div>
+                  <div class="value" id="fc-cond-6am">...</div>
+                </div>
+                <div class="label-parent">
+                  <div class="time">9 AM</div>
+                  <div class="value" id="fc-temp-9am">...°C / ...°F</div>
+                  <div class="value" id="fc-cond-9am">...</div>
+                </div>
+                <div class="label-parent">
+                  <div class="time">12 PM</div>
+                  <div class="value" id="fc-temp-12pm">...°C / ...°F</div>
+                  <div class="value" id="fc-cond-12pm">...</div>
+                </div>
+                <div class="label-parent">
+                  <div class="time">3 PM</div>
+                  <div class="value" id="fc-temp-3pm">...°C / ...°F</div>
+                  <div class="value" id="fc-cond-3pm">...</div>
+                </div>
+                <div class="label-parent">
+                  <div class="time">6 PM</div>
+                  <div class="value" id="fc-temp-6pm">...°C / ...°F</div>
+                  <div class="value" id="fc-cond-6pm">...</div>
+                </div>
+                <div class="label-parent">
+                  <div class="time">9 PM</div>
+                  <div class="value" id="fc-temp-9pm">...°C / ...°F</div>
+                  <div class="value" id="fc-cond-9pm">...</div>
+                </div>
+              </div>
+            </div>
+            <div class="day-date-local">
+              <div class="day" id="fc-day">...</div>
+              <div class="frame-temperature">
+                <div class="group-temperature">
+                  <div class="c" id="fc-c">...°C</div>
+                  <div class="city-name-country" id="fc-f">/ ...°F</div>
+                </div>
+                <div class="condition-text2" id="fc-condition">...</div>
+              </div>
+              <div class="descrip-text">
+                <div class="label-parent">
+                  <div class="time">6 AM</div>
+                  <div class="value" id="fc-temp-6am">...°C / ...°F</div>
+                  <div class="value" id="fc-cond-6am">...</div>
+                </div>
+                <div class="label-parent">
+                  <div class="time">9 AM</div>
+                  <div class="value" id="fc-temp-9am">...°C / ...°F</div>
+                  <div class="value" id="fc-cond-9am">...</div>
+                </div>
+                <div class="label-parent">
+                  <div class="time">12 PM</div>
+                  <div class="value" id="fc-temp-12pm">...°C / ...°F</div>
+                  <div class="value" id="fc-cond-12pm">...</div>
+                </div>
+                <div class="label-parent">
+                  <div class="time">3 PM</div>
+                  <div class="value" id="fc-temp-3pm">...°C / ...°F</div>
+                  <div class="value" id="fc-cond-3pm">...</div>
+                </div>
+                <div class="label-parent">
+                  <div class="time">6 PM</div>
+                  <div class="value" id="fc-temp-6pm">...°C / ...°F</div>
+                  <div class="value" id="fc-cond-6pm">...</div>
+                </div>
+                <div class="label-parent">
+                  <div class="time">9 PM</div>
+                  <div class="value" id="fc-temp-9pm">...°C / ...°F</div>
+                  <div class="value" id="fc-cond-9pm">...</div>
+                </div>
+              </div>
+            </div>
+            <div class="day-date-local">
+              <div class="day" id="fc-day">...</div>
+              <div class="frame-temperature">
+                <div class="group-temperature">
+                  <div class="c" id="fc-c">...°C</div>
+                  <div class="city-name-country" id="fc-f">/ ...°F</div>
+                </div>
+                <div class="condition-text2" id="fc-condition">...</div>
+              </div>
+              <div class="descrip-text">
+                <div class="label-parent">
+                  <div class="time">6 AM</div>
+                  <div class="value" id="fc-temp-6am">...°C / ...°F</div>
+                  <div class="value" id="fc-cond-6am">...</div>
+                </div>
+                <div class="label-parent">
+                  <div class="time">9 AM</div>
+                  <div class="value" id="fc-temp-9am">...°C / ...°F</div>
+                  <div class="value" id="fc-cond-9am">...</div>
+                </div>
+                <div class="label-parent">
+                  <div class="time">12 PM</div>
+                  <div class="value" id="fc-temp-12pm">...°C / ...°F</div>
+                  <div class="value" id="fc-cond-12pm">...</div>
+                </div>
+                <div class="label-parent">
+                  <div class="time">3 PM</div>
+                  <div class="value" id="fc-temp-3pm">...°C / ...°F</div>
+                  <div class="value" id="fc-cond-3pm">...</div>
+                </div>
+                <div class="label-parent">
+                  <div class="time">6 PM</div>
+                  <div class="value" id="fc-temp-6pm">...°C / ...°F</div>
+                  <div class="value" id="fc-cond-6pm">...</div>
+                </div>
+                <div class="label-parent">
+                  <div class="time">9 PM</div>
+                  <div class="value" id="fc-temp-9pm">...°C / ...°F</div>
+                  <div class="value" id="fc-cond-9pm">...</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="see-3-day">
+          <div class="temperature-celcius">Alerts in 3 Days</div>
+          <div class="frame-event">
+            <div class="frame-event2">
+              <div class="event-parent">
+                <div class="event">{event}!</div>
+                <div class="areas">{areas}.</div>
+              </div>
+              <div class="issued-effective">
+                <div class="areas">Issued {effective in format dd-MMMM-yyyy}</div>
+                <div class="areas">until {expires in format dd-MMMM-yyyy}.</div>
+              </div>
+            </div>
+            <div class="frame-event2">
+              <div class="event-parent">
+                <div class="event">{event}!</div>
+                <div class="areas">{areas}.</div>
+              </div>
+              <div class="issued-effective">
+                <div class="areas">Issued {effective in format dd-MMMM-yyyy}</div>
+                <div class="areas">until {expires in format dd-MMMM-yyyy}.</div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <!-- here -->
+
+    <!-- here -->
+    <div class="menu-future">
+      <div class="group-future">
+        <div class="menu-item-text">Wanna see the Future?</div>
+        <div class="weather-check">
+          Check the weather between 14 days and 300 days from today in the
+          future!
+        </div>
+      </div>
+      <form class="frame-check-weather" action="weather.html" method="GET">
+        <div class="text">Check the weather in</div>
+        <input class="enter-city" type="text" name="location" placeholder="Enter a city name" required />
+        <div class="text">on</div>
+        <div class="city">
+          <input class="enter-date" type="date" name="future" id="ftr-date-picker" placeholder="Enter a future date" required />
+          <button class="btn-search" type="submit">
+            <img class="icon-search" alt="" src="./img-weather1/icon-search2.svg" />
+          </button>
+        </div>
+      </form>
+      <img class="future-empty" id="future-empty" src="./img-weather1/future-empty.svg"/>
+      <div class="frame-weather2" id="frame-weather2">
+        <div class="weather-status">
+          <div class="weather-status2">
+            <div class="day-date">
+              <div class="day" id="ftr-day">...</div>
+              <div class="city-name-country" id="ftr-city-country">...</div>
+            </div>
+            <div class="status-derajat">
+              <div class="temperature-celcius" id="ftr-c">...°C</div>
+              <div class="city-name-country" id="ftr-f">/ ...°F</div>
+            </div>
+          </div>
+          <div class="condition-text">
+            <div class="temperature-celcius" id="ftr-cond">...</div>
+            <img class="item-kosong" alt="" src="" id="ftr-cond-img" />
+          </div>
+        </div>
+        <div class="frame-weather">
+          <div class="frame-wind">
+            <div class="label-parent">
+              <div class="label">Wind Speed</div>
+              <div class="value" id="ftr-wind-speed">...</div>
+            </div>
+            <div class="label-parent">
+              <div class="label">Humidity</div>
+              <div class="value" id="ftr-humid">...</div>
+            </div>
+            <div class="label-parent">
+              <div class="label">Visibility</div>
+              <div class="value" id="ftr-vis">...</div>
+            </div>
+            <div class="label-parent">
+              <div class="label">UV Index</div>
+              <div class="value" id="ftr-uv">...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- here -->
+
+    <div class="copyright-2023-by-skyforecast-container">
+      <div class="copyright-2023-by2">
+        Copyright 2023 by SkyForecast for RevoU Kampus Merdeka Program.
+      </div>
+      <div class="copyright-2023-by2">|</div>
+      <div class="copyright-2023-by2">
+        <span>Powered by </span>
+        <a class="weather-api4" href="https://www.weatherapi.com/" target="_blank">
+          <span class="weather-api5">Weather API</span>
+        </a>
+        <span> and </span>
+        <a class="weather-api4" href="http://www.geonames.org/" target="_blank">
+          <span class="weather-api5">GeoNames</span>
+        </a>
+        <span>.</span>
+      </div>
+      <div class="logo-frame">
+        <div class="logo-bawah">
+          <img class="logo-footer" alt="" src="./img-weather1/logo-footerr.svg" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var btnHome = document.getElementById("btn-home");
+    if (btnHome) {
+      btnHome.addEventListener("click", function (e) {
+        window.location.href = "home-index.html";
+      });
+    }
+    var btnWeather = document.getElementById("btn-weather");
+    if (btnWeather) {
+      btnWeather.addEventListener("click", function (e) {
+        window.location.href = "weather.html";
+      });
+    }
+    var btnAbtUs = document.getElementById("btn-abt-us");
+    if (btnAbtUs) {
+      btnAbtUs.addEventListener("click", function (e) {
+        window.location.href = "./about-us.html";
+      });
+    }
+  </script>
+  <script>
+    const today = new Date();
+    let minDate = new Date();
+    minDate.setDate(today.getDate() + 14);
+    let maxDate = new Date();
+    maxDate.setDate(today.getDate() + 300);
+    document.getElementById('ftr-date-picker').setAttribute('min', minDate.toISOString().split('T')[0]);
+    document.getElementById('ftr-date-picker').setAttribute('max', maxDate.toISOString().split('T')[0]);
+  </script>
+  <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js"
+    integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous">
+    </script>
+  <script src="weather.js" />
+</body>
+
+</html>
