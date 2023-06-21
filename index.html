@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="initial-scale=1, width=device-width" />
-  <link rel="stylesheet" href="./home.css" />
+  <link rel="stylesheet" href="./css/home.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap" />
 
   <script>
@@ -16,7 +16,6 @@
         );
       });
     }
-
     var button7ContentB = document.getElementById("button7ContentB");
     if (button7ContentB) {
       button7ContentB.addEventListener("click", function () {
@@ -25,7 +24,6 @@
         );
       });
     }
-
     var button8ContentC = document.getElementById("button8ContentC");
     if (button8ContentC) {
       button8ContentC.addEventListener("click", function () {
@@ -37,20 +35,20 @@
   </script>
   <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js"
     integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous">
-  </script>
+    </script>
 </head>
 
 <body>
   <div class="home">
     <div class="homepage-content">
-      <img class="sun" alt="" src="./home-images/sun.svg" />
-      <img class="cloud" alt="" src="./home-images/cloud.svg" />
+      <img class="sun" alt="" src="./images/home-images/sun.svg" />
+      <img class="cloud" alt="" src="./images/home-images/cloud.svg" />
 
       <!--Navigation Bar-->
       <div class="navigation-bar-container">
         <div class="navigation-content">
           <div class="logo-frame">
-            <img class="logo-skyforecast" alt="" src="./home-images/logo-skyforecast-color.svg" />
+            <img class="logo-skyforecast" alt="" src="./images/home-images/logo-skyforecast-color.svg" />
           </div>
         </div>
         <div class="list-btn">
@@ -72,17 +70,19 @@
         <div class="weather-box">
           <div class="location-feature">
             <div class="weather-text">Check the weather in</div>
+            <!-- TODO - adjust action -->
             <form class="type-location" action="weather.html" method="GET">
               <input class="type-box" type="text" name="location" placeholder="Enter a city name" required />
 
               <button class="btn-search" type="submit">
-                <img class="search-icon" alt="" src="./home-images/search.svg" />
+                <img class="search-icon" alt="" src="./images/home-images/search.svg" />
               </button>
 
             </form>
           </div>
           <div class="location-feature">
             <div class="weather-text">or use</div>
+            <!-- TODO - adjust action -->
             <form action="weather.html">
               <button class="btn-use-loc" type="submit">
                 <div class="text-your-location">Your Location</div>
@@ -125,7 +125,7 @@
             target="_blank">
 
             <button class="btn-content" id="button6ContentA">
-              <img class="content-image" alt="" src="./home-images/article-image-one.png" />
+              <img class="content-image" alt="" src="./images/home-images/article-image-one.png" />
 
               <div class="content-preview">
                 <div class="news-title">
@@ -148,7 +148,7 @@
             target="_blank">
 
             <button class="btn-content" id="button7ContentB">
-              <img class="content-image" alt="" src="./home-images/article-image-two.png" />
+              <img class="content-image" alt="" src="./images/home-images/article-image-two.png" />
 
               <div class="content-preview">
                 <div class="news-title">
@@ -168,7 +168,7 @@
             target="_blank">
 
             <button class="btn-content" id="button8ContentC">
-              <img class="content-image" alt="" src="./home-images/article-image-three.png" />
+              <img class="content-image" alt="" src="./images/home-images/article-image-three.png" />
 
               <div class="content-preview">
                 <div class="news-title">
@@ -185,7 +185,6 @@
           </a>
         </div>
       </div>
-
 
       <!--Random Weather Forecast Report-->
       <div class="random-weather-forecast-container">
@@ -238,7 +237,7 @@
           </div>
         </div>
       </div>
-      <script src="index.js"></script>
+      <script src="./js/index.js"></script>
 
       <!--Footer-->
       <div class="footer">
@@ -259,7 +258,7 @@
         </div>
         <div class="footer-logo-frame">
           <div class="logo-icon">
-            <img class="logo-skyforecast-grey" alt="" src="./home-images/logo-skyforecast-grey.svg" />
+            <img class="logo-skyforecast-grey" alt="" src="./images/home-images/logo-skyforecast-grey.svg" />
           </div>
         </div>
       </div>
@@ -267,6 +266,7 @@
   </div>
 
   <script>
+    // TODO - adjust href
     const btnHome = document.getElementById("btn-home");
     if (btnHome) {
       btnHome.addEventListener("click", function (e) {
