@@ -9,9 +9,7 @@ function fetchWeatherData() {
         if (locations && locations.length > 0) {
           for (let i = 0; i < 3; i++) {
             const randomLocation = locations[Math.floor(Math.random()*locations.length)]; // get 1 random location
-            console.log(randomLocation);
             const { lat, lng } = randomLocation;
-            console.log(`${lat} and ${lng}`)
             fetchWeatherForecast(lat, lng, i+1);
           }
         }
@@ -29,13 +27,12 @@ function fetchWeatherForecast(latitude, longitude, index) {
     .then(response => response.json())
     .then(data => {
       const forecast = data;
-      console.log(data);
       if (forecast) {
         const locationName = data?.location?.name;
         const temperatureC = forecast?.current.temp_c;
         const temperatureF = forecast?.current.temp_f;
         const condition = forecast?.current?.condition.text;
-        const iconURL = forecast?.condition?.icon;
+        const iconURL = forecast?.current?.condition?.icon;
 
         // Mengisi data ke elemen HTML menggunakan DOM manipulation
         const container = document.querySelector('.random-weather-forecast-container');

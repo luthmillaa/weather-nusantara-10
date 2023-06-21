@@ -38,21 +38,6 @@
   <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js"
     integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous">
   </script>
-  <script>
-    // TODO - adjust html links
-    document.getElementById('btn-home').onclick = function () {
-      console.log('ke home');
-      location.href = "home-index.html";
-    }
-    document.getElementById('btn-weather').onclick = function () {
-      console.log('ke weather');
-      location.href = "weather.html";
-    }
-    document.getElementById('btn-abt-us').onclick = function () {
-      console.log('ke about us');
-      location.href = "about-us.html";
-    }
-  </script>
 </head>
 
 <body>
@@ -88,7 +73,7 @@
           <div class="location-feature">
             <div class="weather-text">Check the weather in</div>
             <form class="type-location" action="weather.html" method="GET">
-              <input class="type-box" type="text" name="location" placeholder="Enter a city name" />
+              <input class="type-box" type="text" name="location" placeholder="Enter a city name" required />
 
               <button class="btn-search" type="submit">
                 <img class="search-icon" alt="" src="./home-images/search.svg" />
@@ -98,9 +83,11 @@
           </div>
           <div class="location-feature">
             <div class="weather-text">or use</div>
-            <button class="btn-use-loc" id="btn-weather">
-              <div class="text-your-location">Your Location</div>
-            </button>
+            <form action="weather.html">
+              <button class="btn-use-loc" type="submit">
+                <div class="text-your-location">Your Location</div>
+              </button>
+            </form>
             <div class="weather-text">now!</div>
           </div>
         </div>
@@ -279,6 +266,26 @@
     </div>
   </div>
 
+  <script>
+    const btnHome = document.getElementById("btn-home");
+    if (btnHome) {
+      btnHome.addEventListener("click", function (e) {
+        window.location.href = "home-index.html";
+      });
+    }
+    const btnWeather = document.getElementById("btn-weather");
+    if (btnWeather) {
+      btnWeather.addEventListener("click", function (e) {
+        window.location.href = "weather.html";
+      });
+    }
+    const btnAbtUs = document.getElementById("btn-abt-us");
+    if (btnAbtUs) {
+      btnAbtUs.addEventListener("click", function (e) {
+        window.location.href = "./about-us.html";
+      });
+    }
+  </script>
 </body>
 
 </html>
