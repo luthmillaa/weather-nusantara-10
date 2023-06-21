@@ -1,6 +1,6 @@
 function fetchWeatherData() {
     const apiKey = 'luthmillaa';
-    const url = `http://api.geonames.org/searchJSON?country=id&maxRows=1000&style=SHORT&username=${apiKey}`;
+    const url = `https://api.geonames.org/searchJSON?country=id&maxRows=1000&style=SHORT&username=${apiKey}`;
   
     fetch(url)
       .then(response => response.json())
@@ -15,13 +15,13 @@ function fetchWeatherData() {
         }
       })
       .catch(error => {
-        console.log('Error fetching data:', error);
+        // console.log('Error fetching data:', error);
       });
   }
   
 function fetchWeatherForecast(latitude, longitude, index) {
   const apiKey = '61082700d6284853a6e92559231506'; // Ganti dengan kunci API cuaca yang valid
-  const url = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${latitude},${longitude}&aqi=yes`;
+  const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${latitude},${longitude}&aqi=yes`;
 
   fetch(url)
     .then(response => response.json())
@@ -54,7 +54,7 @@ function fetchWeatherForecast(latitude, longitude, index) {
       }
     })
     .catch(error => {
-      console.log('Error fetching weather forecast:', error);
+      // console.log('Error fetching weather forecast:', error);
     });
 }
 

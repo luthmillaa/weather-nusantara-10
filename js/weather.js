@@ -3,7 +3,7 @@ function getParams() {
   const urlParams = new URLSearchParams(queryString);
   const locationParam = urlParams.get('location');
   const futureParam = urlParams.get('future');
-  console.log(`params: ${locationParam} & ${futureParam}`);
+  // console.log(`params: ${locationParam} & ${futureParam}`);
 
   try {
     if (!locationParam && !futureParam) {
@@ -20,8 +20,8 @@ function getParams() {
       currentWeather(locationParam, futureParam);
     }
   } catch (error) {
-    console.log('catch nih')
-    console.log(error);
+    // console.log('catch nih')
+    // console.log(error);
     const errorMessages = document.getElementsByClassName('error-message');
     for (let i = 0; i < errorMessages.length; i++) {
       errorMessages[i].setAttribute('style', 'display:block')
@@ -40,9 +40,9 @@ function callBackLocation(position) {
 }
 
 function currentWeather(location, future) {
-  console.log(`current weather: ${location}`);
+  // console.log(`current weather: ${location}`);
   const apiKey = '61082700d6284853a6e92559231506'; // Ganti dengan kunci API cuaca yang valid
-  const urlCurrent = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}&aqi=yes`;
+  const urlCurrent = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}&aqi=yes`;
 
   fetch(urlCurrent)
     .then(response => response.json())
@@ -125,7 +125,7 @@ function currentWeather(location, future) {
 function marineWeather(location, future) {
   console.log(`marine weather: ${location}`);
   const apiKey = '61082700d6284853a6e92559231506'; // Ganti dengan kunci API cuaca yang valid
-  const urlMarine = `http://api.weatherapi.com/v1/marine.json?key=${apiKey}&q=${location}`;
+  const urlMarine = `https://api.weatherapi.com/v1/marine.json?key=${apiKey}&q=${location}`;
 
   fetch(urlMarine)
     .then(response => response.json())
@@ -163,7 +163,7 @@ function marineWeather(location, future) {
 function forecastWeather(location, future) {
   console.log(`forecast weather: ${location}`);
   const apiKey = '61082700d6284853a6e92559231506'; // Ganti dengan kunci API cuaca yang valid
-  const urlForecast = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=4&aqi=yes&alerts=no`;
+  const urlForecast = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=4&aqi=yes&alerts=no`;
 
   fetch(urlForecast)
     .then(response => response.json())
@@ -237,7 +237,7 @@ function forecastWeather(location, future) {
 function futureWeather(location, date) {
   console.log(`future weather: ${location} in ${date}`);
   const apiKey = '61082700d6284853a6e92559231506'; // Ganti dengan kunci API cuaca yang valid
-  const urlFuture = `http://api.weatherapi.com/v1/future.json?key=${apiKey}&q=${location}&dt=${date}`;
+  const urlFuture = `https://api.weatherapi.com/v1/future.json?key=${apiKey}&q=${location}&dt=${date}`;
 
   fetch(urlFuture)
     .then(response => response.json())
