@@ -154,7 +154,7 @@ body {
   color: #fff;
 }
 
-.wearher-in-container {
+.weather-in-container {
   position: absolute;
   top: 132px;
   left: 40px;
@@ -162,7 +162,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: var(--gap-xs);
+  gap: 12px;
 }
 
 .copyright-2023-by2 {
@@ -344,6 +344,27 @@ body {
   gap: 12px;
 }
 
+.forecast-feature {
+  position: absolute;
+  top: 252px;
+  left: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 40px;
+  width: 1320px;
+  height: auto;
+}
+
+.forecast-empty {
+  width: 510px;
+}
+
+.future-empty {
+  width: 240px;
+}
+
 .group-temperature,
 .main-frame-weather {
   display: flex;
@@ -352,9 +373,9 @@ body {
 }
 
 .main-frame-weather {
-  position: absolute;
+  /* position: absolute;
   top: 212px;
-  left: 40px;
+  left: 40px; */
   border-radius: 24px;
   background-color: rgba(0, 0, 0, 0.03);
   backdrop-filter: blur(20px);
@@ -456,10 +477,25 @@ body {
   font-size: 14px;
 }
 
+.frame-column {
+  display: none;
+  flex-direction: column;
+  gap: 40px;
+  width: max-content;
+  height: auto;
+}
+
+.frame-row {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  width: max-content;
+}
+
 .frame-marine {
-  position: absolute;
+  /* position: absolute;
   top: 212px;
-  left: 955px;
+  left: 955px; */
   height: 456.5px;
   display: flex;
   flex-direction: column;
@@ -521,10 +557,14 @@ body {
   font-size: 14px;
 }
 
+.c {
+  margin-bottom: 12px;
+}
+
 .day-city {
-  position: absolute;
+  /* position: absolute;
   top: 675px;
-  left: 40px;
+  left: 40px; */
   width: 1360px;
   flex-direction: column;
   gap: v20px;
@@ -589,9 +629,9 @@ body {
 }
 
 .see-3-day {
-  position: absolute;
+  /* position: absolute;
   top: 1063px;
-  left: 40px;
+  left: 40px; */
   width: 1360px;
   gap: 20px
 }
@@ -637,17 +677,21 @@ body {
   font-size: 20px;
 }
 
+.menu-future {
+  display: flex;
+}
+
 .menu-future,
 .frame-weather2 {
   border-radius: 24px;
   overflow: hidden;
-  display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: 32px;
 }
 
 .frame-weather2 {
+  display: none;
   background-color: rgba(0, 0, 0, 0.03);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(52, 0, 202, 0.4);
@@ -660,7 +704,7 @@ body {
 
 .menu-future {
   position: absolute;
-  top: 1360px;
+  top: 1140px;
   left: calc(50% - 451px);
   align-items: center;
   font-size: 64px;
@@ -670,7 +714,7 @@ body {
   position: relative;
   background-color: #fff;
   width: 100%;
-  height: 2109px;
+  height: 1900px;
   overflow: hidden;
   text-align: left;
   font-size: 20px;
