@@ -100,19 +100,6 @@ body {
   position: relative;
 }
 
-.enter-city {
-  align-self: stretch;
-  flex: 1;
-  border-radius: 22px;
-  background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.4);
-  display: flex;
-  flex-direction: row;
-  padding: 8px 20px;
-  align-items: center;
-  justify-content: flex-start;
-}
-
 .icon-search {
   position: relative;
   width: 24px;
@@ -121,37 +108,64 @@ body {
   flex-shrink: 0;
 }
 
-.search-page {
-  border-radius: 22px;
+.btn-search {
+  /* border-radius: 22px;
   background-color: #3400ca;
   display: flex;
   flex-direction: row;
   padding: 8px 16px;
   align-items: center;
+  justify-content: center; */
+  cursor: pointer;
+  border: 0;
+  padding: 8px 16px;
+  background-color: #3400CA;
+  border-radius: 22px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
 }
 
-.city,
-.your-location-container {
+.city {
   display: flex;
   flex-direction: row;
   align-items: center;
   font-size: 16px;
-}
-
-.city {
   width: 300px;
   justify-content: flex-start;
   gap: 8px;
   color: rgba(0, 0, 0, 0.4);
 }
 
-.your-location-container {
+.btn-use-loc {
+  /* display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 16px;
   border-radius: 22px;
   background-color: #3400ca;
   padding: 8px 20px;
   justify-content: center;
-  color: #fff;
+  color: #fff; */
+  cursor: pointer;
+  border: 0;
+  padding: 8px 20px;
+  background-color: #3400CA;
+  border-radius: 22px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-your-location {
+  position: relative;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Lexend';
+  color: #FFFFFF;
+  text-align: left;
 }
 
 .weather-in-container {
@@ -663,15 +677,37 @@ body {
 }
 
 .enter-city {
-  align-self: stretch;
-  border-radius: 22px;
-  background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.4);
-  box-sizing: border-box;
-  width: 236px;
-  padding: 8px 20px;
+  font-family: 'Lexend';
   font-size: 16px;
-  color: rgba(0, 0, 0, 0.4);
+  background-color: #FFFFFF;
+  align-self: stretch;
+  flex: 1;
+  border-radius: 22px;
+  display: flex;
+  flex-direction: row;
+  padding: 8px 20px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.enter-date {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  font-family: 'Lexend';
+  font-size: 16px;
+  background-color: #FFFFFF;
+  align-self: stretch;
+  flex: 1;
+  border-radius: 22px;
+  display: flex;
+  flex-direction: row;
+  padding: 8px 20px;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .frame-check-weather {

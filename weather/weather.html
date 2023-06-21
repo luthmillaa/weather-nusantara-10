@@ -31,22 +31,19 @@
         </div>
       </div>
     </div>
-    <!-- TODO - FIX WEATHER-IN-CONTAINER -->
-    <div class="weather-in-container">
+    <form class="weather-in-container" action="weather.html" method="GET">
       <div class="text">Check the weather in</div>
       <div class="city">
-        <div class="enter-city">
-          <div class="text">Enter a city name</div>
-        </div>
-        <div class="search-page">
+        <input class="enter-city" type="text" name="location" placeholder="Enter a city name" />
+        <button class="btn-search" type="submit">
           <img class="icon-search" alt="" src="./img-weather1/search.svg" />
-        </div>
+        </button>
       </div>
       <div class="text">or in</div>
-      <div class="your-location-container">
-        <div class="menu-item-text">Your Location</div>
-      </div>
-    </div>
+      <button class="btn-use-loc" type="submit">
+        <div class="text-your-location">Your Location</div>
+      </button>
+    </form>
 
     <!-- here -->
     <div class="forecast-feature">
@@ -330,22 +327,17 @@
           future!
         </div>
       </div>
-      <!-- TODO - FIX FRAME-CHECK-WEATHER -->
-      <div class="frame-check-weather">
+      <form class="frame-check-weather" action="weather.html" method="GET">
         <div class="text">Check the weather in</div>
-        <div class="enter-city">
-          <div class="text">Enter a city name</div>
-        </div>
+        <input class="enter-city" type="text" name="location" placeholder="Enter a city name" required />
         <div class="text">on</div>
         <div class="city">
-          <div class="enter-city">
-            <div class="text">Enter future date</div>
-          </div>
-          <div class="search-page">
+          <input class="enter-date" type="date" name="future" id="ftr-date-picker" placeholder="Enter a future date" required />
+          <button class="btn-search" type="submit">
             <img class="icon-search" alt="" src="./img-weather1/icon-search2.svg" />
-          </div>
+          </button>
         </div>
-      </div>
+      </form>
       <img class="future-empty" id="future-empty" src="./img-weather1/future-empty.svg"/>
       <div class="frame-weather2" id="frame-weather2">
         <div class="weather-status">
@@ -426,6 +418,15 @@
         window.location.href = "./about-us.html";
       });
     }
+  </script>
+  <script>
+    const today = new Date();
+    let minDate = new Date();
+    minDate.setDate(today.getDate() + 14);
+    let maxDate = new Date();
+    maxDate.setDate(today.getDate() + 300);
+    document.getElementById('ftr-date-picker').setAttribute('min', minDate.toISOString().split('T')[0]);
+    document.getElementById('ftr-date-picker').setAttribute('max', maxDate.toISOString().split('T')[0]);
   </script>
   <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js"
     integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous">
