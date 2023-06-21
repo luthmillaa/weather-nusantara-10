@@ -20,13 +20,13 @@
         <img class="logo-warna" alt="" src="./img-weather1/logo-warna.svg" />
       </div>
       <div class="list-buttonn">
-        <div class="home-frame" id="frameContainer">
+        <div class="home-frame" id="btn-home">
           <div class="menu-item-text">Home</div>
         </div>
-        <div class="weather-frame">
+        <div class="weather-frame" id="btn-weather">
           <div class="menu-item-text">Weather</div>
         </div>
-        <div class="home-frame" id="frameContainer2">
+        <div class="home-frame" id="btn-abt-us">
           <div class="menu-item-text">About Us</div>
         </div>
       </div>
@@ -405,16 +405,21 @@
   </div>
 
   <script>
-    var frameContainer = document.getElementById("frameContainer");
-    if (frameContainer) {
-      frameContainer.addEventListener("click", function (e) {
-        window.location.href = "/";
+    var btnHome = document.getElementById("btn-home");
+    if (btnHome) {
+      btnHome.addEventListener("click", function (e) {
+        window.location.href = "home-index.html";
       });
     }
-
-    var frameContainer2 = document.getElementById("frameContainer2");
-    if (frameContainer2) {
-      frameContainer2.addEventListener("click", function (e) {
+    var btnWeather = document.getElementById("btn-weather");
+    if (btnWeather) {
+      btnWeather.addEventListener("click", function (e) {
+        window.location.href = "weather.html";
+      });
+    }
+    var btnAbtUs = document.getElementById("btn-abt-us");
+    if (btnAbtUs) {
+      btnAbtUs.addEventListener("click", function (e) {
         window.location.href = "./about-us.html";
       });
     }
