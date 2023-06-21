@@ -1,10 +1,10 @@
 function getParams() {
   const queryString = window.location.search;
-  console.log(queryString);
+  // console.log(queryString);
   const urlParams = new URLSearchParams(queryString);
   const locationParam = urlParams.get('location');
   const futureParam = urlParams.get('future');
-  console.log(`params: ${locationParam} & ${futureParam}`);
+  // console.log(`params: ${locationParam} & ${futureParam}`);
 
   try {
     if (!locationParam && !futureParam) {
