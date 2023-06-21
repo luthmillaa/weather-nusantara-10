@@ -26,7 +26,6 @@ body {
   right: -75.5px;
   width: 520px;
   height: 520px;
-  opacity: 0.75;
 }
 .cloud {
   position: absolute;
@@ -36,8 +35,6 @@ body {
   height: 371px;
   opacity: 0.65;
 }
-
-/*Navigation Bar*/
 
 .navigation-bar-container {
   position: absolute;
@@ -114,8 +111,6 @@ body {
   align-items: center;
   justify-content: center;
 }
-
-/*Weather Forecast Feature*/
 
 .weather-box,
 .weather-check-container {
@@ -208,8 +203,6 @@ body {
   text-align: left;
 }
 
-/*Greetings*/
-
 .greetings-container {
   position: absolute;
   top: 502px;
@@ -235,8 +228,6 @@ body {
 .greetings-paragraph-two {
   margin: 0;
 }
-
-/*News Article*/
 
 .article-container,
 .article-menu {
@@ -325,8 +316,6 @@ body {
   color: #3400CA;
 }
 
-/*Random Weather Forecast Report*/
-
 .forecast-report,
 .random-weather-forecast-container {
   display: flex;
@@ -405,8 +394,6 @@ body {
   width: 73px;
   object-fit: cover;
 }
-
-/*Footer*/
 
 .footer {
   position: absolute;

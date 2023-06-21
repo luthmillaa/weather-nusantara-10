@@ -110,13 +110,6 @@ body {
 }
 
 .btn-search {
-  /* border-radius: 22px;
-  background-color: #3400ca;
-  display: flex;
-  flex-direction: row;
-  padding: 8px 16px;
-  align-items: center;
-  justify-content: center; */
   cursor: pointer;
   border: 0;
   padding: 8px 16px;
@@ -140,15 +133,6 @@ body {
 }
 
 .btn-use-loc {
-  /* display: flex;
-  flex-direction: row;
-  align-items: center;
-  font-size: 16px;
-  border-radius: 22px;
-  background-color: #3400ca;
-  padding: 8px 20px;
-  justify-content: center;
-  color: #fff; */
   cursor: pointer;
   border: 0;
   padding: 8px 20px;
@@ -401,9 +385,6 @@ body {
 }
 
 .main-frame-weather {
-  /* position: absolute;
-  top: 212px;
-  left: 40px; */
   border-radius: 24px;
   background-color: rgba(0, 0, 0, 0.03);
   backdrop-filter: blur(20px);
@@ -521,9 +502,6 @@ body {
 }
 
 .frame-marine {
-  /* position: absolute;
-  top: 212px;
-  left: 955px; */
   height: 456.5px;
   display: flex;
   flex-direction: column;
@@ -591,9 +569,6 @@ body {
 }
 
 .day-city {
-  /* position: absolute;
-  top: 675px;
-  left: 40px; */
   width: 1360px;
   flex-direction: column;
   gap: v20px;
@@ -658,9 +633,6 @@ body {
 }
 
 .see-3-day {
-  /* position: absolute;
-  top: 1063px;
-  left: 40px; */
   width: 1360px;
   gap: 20px
 }

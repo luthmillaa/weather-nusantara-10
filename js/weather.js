@@ -14,7 +14,7 @@ function getParams() {
     } else if (locationParam && !futureParam) {
       // hanya fitur current weather menggunakan param location
       currentWeather(locationParam, null);
-  
+
     } else if (locationParam && futureParam) {
       // fitur current & future weather menggunakan param location
       currentWeather(locationParam, futureParam);
@@ -23,7 +23,7 @@ function getParams() {
     console.log('catch nih')
     console.log(error);
     const errorMessages = document.getElementsByClassName('error-message');
-    for (let i = 0; i < errorMessages.length; i ++) {
+    for (let i = 0; i < errorMessages.length; i++) {
       errorMessages[i].setAttribute('style', 'display:block')
     }
   }
@@ -115,7 +115,7 @@ function currentWeather(location, future) {
       // console.log('Error fetching current weather:', error);
       console.log('throw di current')
       const errorMessages = document.getElementsByClassName('error-message');
-      for (let i = 0; i < errorMessages.length; i ++) {
+      for (let i = 0; i < errorMessages.length; i++) {
         errorMessages[i].setAttribute('style', 'display:block')
       }
       throw new Error(error);
@@ -153,7 +153,7 @@ function marineWeather(location, future) {
       // console.log('Error fetching marine weather:', error);
       console.log('throw di marine')
       const errorMessages = document.getElementsByClassName('error-message');
-      for (let i = 0; i < errorMessages.length; i ++) {
+      for (let i = 0; i < errorMessages.length; i++) {
         errorMessages[i].setAttribute('style', 'display:block')
       }
       throw new Error(error);
@@ -164,7 +164,7 @@ function forecastWeather(location, future) {
   console.log(`forecast weather: ${location}`);
   const apiKey = '61082700d6284853a6e92559231506'; // Ganti dengan kunci API cuaca yang valid
   const urlForecast = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=4&aqi=yes&alerts=no`;
-  
+
   fetch(urlForecast)
     .then(response => response.json())
     .then(data => {
@@ -227,7 +227,7 @@ function forecastWeather(location, future) {
       // console.log('Error fetching forecast weather:', error);
       console.log('throw di forecast')
       const errorMessages = document.getElementsByClassName('error-message');
-      for (let i = 0; i < errorMessages.length; i ++) {
+      for (let i = 0; i < errorMessages.length; i++) {
         errorMessages[i].setAttribute('style', 'display:block')
       }
       throw new Error(error);
@@ -280,7 +280,7 @@ function futureWeather(location, date) {
       // console.log('Error fetching forecast weather:', error);
       console.log('throw di future')
       const errorMessages = document.getElementsByClassName('error-message');
-      for (let i = 0; i < errorMessages.length; i ++) {
+      for (let i = 0; i < errorMessages.length; i++) {
         errorMessages[i].setAttribute('style', 'display:block')
       }
       throw new Error(error);
