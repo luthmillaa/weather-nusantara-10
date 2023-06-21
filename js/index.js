@@ -1,6 +1,6 @@
 function fetchWeatherData() {
     const apiKey = 'luthmillaa';
-    const url = `http://api.geonames.org/searchJSON?country=id&maxRows=1000&style=SHORT&username=${apiKey}`;
+    const url = `https://secure.geonames.org/searchJSON?country=id&maxRows=1000&style=SHORT&username=${apiKey}`;
   
     fetch(url)
       .then(response => response.json())
